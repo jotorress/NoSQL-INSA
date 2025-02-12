@@ -40,6 +40,7 @@ EL resultado es `4`.
 ```bash
 xmllint --xpath "sum(//@*)" abc.xml
 ```
+El resultado es `10`.
 
 #### 4. Le contenu textuel du document, où chaque ’b’ est remplacé par un ’c’
 Por medio del comando string es posible leer la concantenacion de los strings The string value of an element or document node is the concatenation of
@@ -48,6 +49,7 @@ the character data in all text nodes below.
 ```bash
 xmllint --xpath "translate(string(/),'b','c')" abc.xml
 ```
+El resultado es `cliclacou`.
 
 #### 5. Le nom du fils du dernier ´elément ’c’ dans l’arbre.
 
@@ -58,24 +60,14 @@ xmllint --xpath "name(//c[position()=last()]/*)" abc.xml
 ```bash
 xmllint --xpath "name(//c[last()]/*)" abc.xml
 ```
+El resultado es `e`.
+
 #### 6. 
 
 ##### 1. //e/preceding::text()
 XPath toma los espacios y saltos de lineas como nodos de texto vacios, por lo cual el resultado es el mismo pero con espacios entre el texto presentado:
- 
-
-  
-
- 
-
- 
 
   bli
-  
-
-  
-
-
   
 ##### 2. count(//c|//b/node())
 El resultado es `8`, esto sucede por los espacios que existen dentro de la identacion siendo `textos vacios`, lo cual se puede denotar por medio del comando
@@ -104,6 +96,8 @@ Set contains 8 nodes:
     content= 
 / > 
 ```
+##### 3. La somme de tous les attributs.
+El resultado sigue siendo `10` ya que se asume que los elementos vacios no estan siendo sumados dentro del comando, solamente los atributos.
 
 ---
 
