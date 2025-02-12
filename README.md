@@ -1,6 +1,6 @@
 # Interroger des Bases de Données Non-Relationnelles
 
-Ce répertoire contient les fichiers et solutions pour le TD de Schémas pour XML.
+Ce répertoire contient les fichiers et solutions pour le TD des Bases de Données Non-Relationnelles.
 
 **Fait par : CHICA Miller et TORRES Jonathan**
 
