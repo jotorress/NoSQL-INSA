@@ -11,7 +11,7 @@ Ce répertoire contient les fichiers et solutions pour le TD de Schémas pour XM
 
 ## Exercices
 
-### Exercice 1 : Premiers pas
+### Exercice 1.1 : Premiers pas
 
 #### 1. //e/preceding::text()
 Se usa `//e` para ir al nodo de `e` dentro del archivo, despues por medio del `preceding` se busca todos los valores anteriores dentro del nodo de `c` y el nodo `b`, encontrando el texto `bli`, de esta manera si hay texto antes de dicho nodo, sera mostrado.
@@ -42,7 +42,7 @@ xmllint --xpath "sum(//@*)" abc.xml
 ```
 El resultado es `10`.
 
-#### 4. Le contenu textuel du document, où chaque ’b’ est remplacé par un ’c’
+#### 4. Le contenu textuel du document, où chaque ’b’ est remplacé par un ’c’.
 Por medio del comando string es posible leer la concantenacion de los strings The string value of an element or document node is the concatenation of
 the character data in all text nodes below.
 
@@ -99,7 +99,31 @@ Set contains 8 nodes:
 ##### 3. La somme de tous les attributs.
 El resultado sigue siendo `10` ya que se asume que los elementos vacios no estan siendo sumados dentro del comando, solamente los atributos.
 
+##### 4. Le contenu textuel du document, où chaque ’b’ est remplacé par un ’c’.
+EL resultado es el esperado, solamente se imprimen los espacios por la identacion realizada, explicada en el primer punto.
+```bash
+
+
+
+
+
+cli
+
+
+cla
+
+
+cou
+
+
+```
+
+##### 5. Le nom du fils du dernier ´elément ’c’ dans l’arbre.
+El resultado sigue siendo `e` porque estamos buscando un valor en especifico que en este caso es un name, por lo cual la identacion o espacios vacios no afectan el comando.
+
 ---
 
 
-### Exercice 2
+### Exercice 1.2 Recettes
+
+
