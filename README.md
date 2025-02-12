@@ -35,4 +35,27 @@ xmllint --xpath "/count(//c|//b/node())" adc.xml
 
 EL resultado es `4`.
 
+#### 3. La somme de tous les attributs.
+
+```bash
+xmllint --xpath "sum(//@*)" abc.xml
+```
+
+#### 4. Le contenu textuel du document, où chaque ’b’ est remplacé par un ’c’
+Por medio del comando string es posible leer la concantenacion de los strings The string value of an element or document node is the concatenation of
+the character data in all text nodes below.
+
+```bash
+xmllint --xpath "translate(string(/),'b','c')" abc.xml
+```
+
+#### 5. Le nom du fils du dernier ´elément ’c’ dans l’arbre.
+
+```bash
+xmllint --xpath "name(//c[position()=last()]/*)" abc.xml
+```
+
+```bash
+xmllint --xpath "name(//c[last()]/*)" abc.xml
+```
 ---
