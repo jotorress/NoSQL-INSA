@@ -1,6 +1,6 @@
 # Interroger des Bases de Données Non-Relationnelles
 
-Ce répertoire contient les fichiers et solutions pour le TD de Schémas pour XML. Ci-dessous, les exercices et la validation des fichiers XML et DTD sont détaillés.
+Ce répertoire contient les fichiers et solutions pour le TD de Schémas pour XML.
 
 **Fait par : CHICA Miller et TORRES Jonathan**
 
@@ -59,9 +59,9 @@ xmllint --xpath "name(//c[position()=last()]/*)" abc.xml
 xmllint --xpath "name(//c[last()]/*)" abc.xml
 ```
 #### 6. 
-Con el archivo identado se realizan los comandos de cada punto y se obtienen estas respuestas:
-##### 1. //e/preceding::text()
 
+##### 1. //e/preceding::text()
+XPath toma los espacios y saltos de lineas como nodos de texto vacios, por lo cual el resultado es el mismo pero con espacios entre el texto presentado:
  
 
   
@@ -75,6 +75,37 @@ Con el archivo identado se realizan los comandos de cada punto y se obtienen est
 
   
 
-   
-Esto indica que muestra el resultado pero 
+
+  
+##### 2. count(//c|//b/node())
+El resultado es `8`, esto sucede por los espacios que existen dentro de la identacion siendo `textos vacios`, lo cual se puede denotar por medio del comando
+
+```bash
+xmllint --shell abc.xml 
+/ > xpath //c|//b/node()
+```
+
+Donde el resultado es correspondiente a:
+```bash
+Object is a Node Set :
+Set contains 8 nodes:
+1  TEXT
+    content= 
+2  ELEMENT c
+3  TEXT
+    content= 
+4  TEXT
+    content= bli 
+5  ELEMENT c
+6  TEXT
+    content= 
+7  ELEMENT c
+8  TEXT
+    content= 
+/ > 
+```
+
 ---
+
+
+### Exercice 2
