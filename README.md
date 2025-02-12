@@ -19,7 +19,7 @@ Se usa `//e` para ir al nodo de `e` dentro del archivo, despues por medio del `p
 El comando usado es el siguiente :
 
 ```bash
-xmllint --xpath "//e/preceding::text()" adc.xml
+xmllint --xpath "//e/preceding::text()" abc.xml
 ```
 
 El resultado es `bli`.
@@ -30,7 +30,7 @@ Esta consulta cuenta todos los elementos de `c` y los nodos hijos de `b` donde s
 El comando usado es el siguiente :
 
 ```bash
-xmllint --xpath "/count(//c|//b/node())" adc.xml
+xmllint --xpath "/count(//c|//b/node())" abc.xml
 ```
 
 EL resultado es `4`.
