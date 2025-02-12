@@ -59,7 +59,22 @@ xmllint --xpath "name(//c[position()=last()]/*)" abc.xml
 xmllint --xpath "name(//c[last()]/*)" abc.xml
 ```
 #### 6. 
-Con el archivo editado se realizan los comandos de cada punto y se obtienen estas respuestas:
+Con el archivo identado se realizan los comandos de cada punto y se obtienen estas respuestas:
 ##### 1. //e/preceding::text()
 
+ 
+
+  
+
+ 
+
+ 
+
+  bli
+  
+
+  
+
+   
+Esto indica que muestra el resultado pero 
 ---
