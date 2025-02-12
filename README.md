@@ -1,4 +1,4 @@
-# Interroger des Bases de Donn´ees Non-Relationnelles
+# Interroger des Bases de Données Non-Relationnelles
 
 Ce répertoire contient les fichiers et solutions pour le TD de Schémas pour XML. Ci-dessous, les exercices et la validation des fichiers XML et DTD sont détaillés.
 
@@ -58,4 +58,8 @@ xmllint --xpath "name(//c[position()=last()]/*)" abc.xml
 ```bash
 xmllint --xpath "name(//c[last()]/*)" abc.xml
 ```
+#### 6. 
+Con el archivo editado se realizan los comandos de cada punto y se obtienen estas respuestas:
+##### 1. //e/preceding::text()
+
 ---
