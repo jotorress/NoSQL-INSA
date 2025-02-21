@@ -126,4 +126,56 @@ El resultado sigue siendo `e` porque estamos buscando un valor en especifico que
 
 ### Exercice 1.2 Recettes
 
+#### Recettes 1
+##### 1. Les éléments titres des recettes.
+Para poder ver los titulos de las recetas, este es el comando a seguir con la etiqueta `recette` para luego seguir con `titre`
 
+```bash
+
+xmllint --xpath "//recette/titre" recettes1.xml
+
+```
+Por lo cual este será el resultado :
+
+```
+<titre>Batavia aux croutons</titre>
+<titre>Tarte Fine à l'italienne</titre>
+<titre>Sablés bretons à la fleur d'oranger</titre>
+<titre>Clafoutis aux cerises</titre>
+```
+
+##### 2. Les noms des ingrédients.
+
+##### 3. L’élément titre de la deuxième recette.
+
+##### 4. La dernière étape de chaque recette.
+
+##### 5. Le nombre de recettes.
+
+##### 6. Les éléments recette qui ont strictement moins de 7 ingrédients.
+
+##### 7. Les titres des recettes qui ont strictement moins de 7 ingrédients.
+
+##### 8. Les recettes qui utilisent de la farine.
+
+##### 9. Les recettes de la catégorie entrée.
+
+
+#### Recettes 2
+##### 1. Les éléments titres des recettes.
+
+##### 2. Les noms des ingrédients.
+
+##### 3. L’élément titre de la deuxième recette.
+
+##### 4. La dernière étape de chaque recette.
+
+##### 5. Le nombre de recettes.
+
+##### 6. Les éléments recette qui ont strictement moins de 7 ingrédients.
+
+##### 7. Les titres des recettes qui ont strictement moins de 7 ingrédients.
+
+##### 8. Les recettes qui utilisent de la farine.
+
+##### 9. Les recettes de la catégorie entrée.
