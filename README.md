@@ -195,6 +195,7 @@ xmllint --xpath "//recette[ingredients/ingredient/nom_ing = 'farine']" recettes1
 ```
 
 ##### 9. Les recettes de la catégorie entrée.
+Se hace la igualdad a categorias para encontrar la caategoria que sea `Entrée` :
 ```bash
 
 xmllint --xpath "//recette[categorie = 'Entrée']" recettes1.xml
