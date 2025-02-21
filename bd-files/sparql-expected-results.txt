@@ -1,0 +1,569 @@
+Résultat de la requête foot.sparql donnée dans l'archive
+-----------------------------------
+| euro | numero | matches | goals |
+===================================
+| 2016 | 7      | 7       | 6     |
+| 2020 | 7      | 4       | 1     |
+| 2024 | 7      | 6       |       |
+-----------------------------------
+
+
+
+Résultat attendu pour f1.sparql
+---------------------------------------
+| player                | count_euros |
+=======================================
+| "Olivier Giroud"      | 4           |
+| "Steve Mandanda"      | 4           |
+| "Antoine Griezmann"   | 3           |
+| "Hugo Lloris"         | 3           |
+| "Karim Benzema"       | 3           |
+| "Kingsley Coman"      | 3           |
+| "N'Golo Kanté"        | 3           |
+| "Patrice Evra"        | 3           |
+| "Adil Rami"           | 2           |
+| "Adrien Rabiot"       | 2           |
+| "Benjamin Pavard"     | 2           |
+| "Blaise Matuidi"      | 2           |
+| "Florent Malouda"     | 2           |
+| "Franck Ribéry"       | 2           |
+| "Jules Koundé"        | 2           |
+| "Kylian Mbappé"       | 2           |
+| "Laurent Koscielny"   | 2           |
+| "Lucas Digne"         | 2           |
+| "Marcus Thuram"       | 2           |
+| "Mike Maignan"        | 2           |
+| "Moussa Sissoko"      | 2           |
+| "Ousmane Dembélé"     | 2           |
+| "Paul Pogba"          | 2           |
+| "Samir Nasri"         | 2           |
+| "Yohan Cabaye"        | 2           |
+| "Alou Diarra"         | 1           |
+| "Alphonse Areola"     | 1           |
+| "André-Pierre Gignac" | 1           |
+| "Anthony Martial"     | 1           |
+| "Anthony Réveillère"  | 1           |
+| "Aurélien Tchouaméni" | 1           |
+| "Bacary Sagna"        | 1           |
+| "Benoit Costil"       | 1           |
+| "Bradley Barcola"     | 1           |
+| "Brice Samba"         | 1           |
+| "Christophe Jallet"   | 1           |
+| "Clément Lenglet"     | 1           |
+| "Corentin Tolisso"    | 1           |
+| "Cédric Carrasso"     | 1           |
+| "Dayot Upamecano"     | 1           |
+| "Dimitri Payet"       | 1           |
+| "Eduardo Camavinga"   | 1           |
+| "Eliaquim Mangala"    | 1           |
+| "Ferland Mendy"       | 1           |
+| "Gaël Clichy"         | 1           |
+| "Hatem Ben Arfa"      | 1           |
+| "Ibrahima Konaté"     | 1           |
+| "Jonathan Clauss"     | 1           |
+| "Jérémy Ménez"        | 1           |
+| "Kurt Zouma"          | 1           |
+| "Lucas Hernandez"     | 1           |
+| "Léo Dubois"          | 1           |
+| "Marvin Martin"       | 1           |
+| "Mathieu Debuchy"     | 1           |
+| "Mathieu Valbuena"    | 1           |
+| "Morgan Schneiderlin" | 1           |
+| "Philippe Mexès"      | 1           |
+| "Presnel Kimpembe"    | 1           |
+| "Randal Kolo Muani"   | 1           |
+| "Raphaël Varane"      | 1           |
+| "Samuel Umtiti"       | 1           |
+| "Thomas Lemar"        | 1           |
+| "Théo Hernandez"      | 1           |
+| "Warren Zaïre-Emery"  | 1           |
+| "William Saliba"      | 1           |
+| "Wissam Ben Yedder"   | 1           |
+| "Yann M'Vila"         | 1           |
+| "Youssouf Fofana"     | 1           |
+---------------------------------------
+
+
+
+Résultat attendu pour f2.sparql
+-----------------------------------------
+| player                | total_matches |
+=========================================
+| "Antoine Griezmann"   | 17            |
+| "Hugo Lloris"         | 15            |
+| "Olivier Giroud"      | 15            |
+| "N'Golo Kanté"        | 14            |
+| "Paul Pogba"          | 11            |
+| "Karim Benzema"       | 10            |
+| "Patrice Evra"        | 10            |
+| "Adrien Rabiot"       | 9             |
+| "Kingsley Coman"      | 9             |
+| "Kylian Mbappé"       | 9             |
+| "Adil Rami"           | 8             |
+| "Laurent Koscielny"   | 8             |
+| "Moussa Sissoko"      | 8             |
+| "Bacary Sagna"        | 7             |
+| "Blaise Matuidi"      | 7             |
+| "Dimitri Payet"       | 7             |
+| "Franck Ribéry"       | 7             |
+| "Jules Koundé"        | 7             |
+| "Ousmane Dembélé"     | 7             |
+| "André-Pierre Gignac" | 6             |
+| "Dayot Upamecano"     | 6             |
+| "Mike Maignan"        | 6             |
+| "Samir Nasri"         | 6             |
+| "Théo Hernandez"      | 6             |
+| "William Saliba"      | 6             |
+| "Aurélien Tchouaméni" | 5             |
+| "Florent Malouda"     | 5             |
+| "Marcus Thuram"       | 5             |
+| "Randal Kolo Muani"   | 5             |
+| "Yohan Cabaye"        | 5             |
+| "Eduardo Camavinga"   | 4             |
+| "Mathieu Debuchy"     | 4             |
+| "Presnel Kimpembe"    | 4             |
+| "Raphaël Varane"      | 4             |
+| "Alou Diarra"         | 3             |
+| "Anthony Martial"     | 3             |
+| "Benjamin Pavard"     | 3             |
+| "Bradley Barcola"     | 3             |
+| "Corentin Tolisso"    | 3             |
+| "Gaël Clichy"         | 3             |
+| "Jérémy Ménez"        | 3             |
+| "Philippe Mexès"      | 3             |
+| "Samuel Umtiti"       | 3             |
+| "Yann M'Vila"         | 3             |
+| "Youssouf Fofana"     | 3             |
+| "Hatem Ben Arfa"      | 2             |
+| "Lucas Digne"         | 2             |
+| "Lucas Hernandez"     | 2             |
+| "Marvin Martin"       | 2             |
+| "Anthony Réveillère"  | 1             |
+| "Clément Lenglet"     | 1             |
+| "Eliaquim Mangala"    | 1             |
+| "Thomas Lemar"        | 1             |
+-----------------------------------------
+
+
+
+Résultat attendu pour f3.sparql
+-----------------------------------------------------
+| player              | total_goals | total_matches |
+=====================================================
+| "Antoine Griezmann" | 7           | 17            |
+| "Karim Benzema"     | 4           | 10            |
+| "Olivier Giroud"    | 3           | 15            |
+| "Dimitri Payet"     | 3           | 7             |
+| "Paul Pogba"        | 2           | 11            |
+| "Kylian Mbappé"     | 1           | 9             |
+| "Samir Nasri"       | 1           | 6             |
+| "Randal Kolo Muani" | 1           | 5             |
+| "Yohan Cabaye"      | 1           | 5             |
+| "Jérémy Ménez"      | 1           | 3             |
+-----------------------------------------------------
+
+
+
+Résultat attendu pour f4.sparql
+---------------------------------------------------------
+| player              | euro1 | goals1 | euro2 | goals2 |
+=========================================================
+| "Paul Pogba"        | 2016  | 1      | 2020  | 1      |
+| "Antoine Griezmann" | 2016  | 6      | 2020  | 1      |
+---------------------------------------------------------
+
+
+
+Résultat attendu pour f5.sparql
+-------------------------------------------------------
+| euro | n  | name                  | matches | goals |
+=======================================================
+| 2024 | 1  | "Brice Samba"         |         |       |
+| 2024 | 2  | "Benjamin Pavard"     |         |       |
+| 2024 | 3  | "Ferland Mendy"       |         |       |
+| 2024 | 4  | "Dayot Upamecano"     | 6       |       |
+| 2024 | 5  | "Jules Koundé"        | 6       |       |
+| 2024 | 6  | "Eduardo Camavinga"   | 4       |       |
+| 2024 | 7  | "Antoine Griezmann"   | 6       |       |
+| 2024 | 8  | "Aurélien Tchouaméni" | 5       |       |
+| 2024 | 9  | "Olivier Giroud"      | 4       |       |
+| 2024 | 10 | "Kylian Mbappé"       | 5       | 1     |
+| 2024 | 11 | "Ousmane Dembélé"     | 5       |       |
+| 2024 | 12 | "Randal Kolo Muani"   | 5       | 1     |
+| 2024 | 13 | "N'Golo Kanté"        | 6       |       |
+| 2024 | 14 | "Adrien Rabiot"       | 5       |       |
+| 2024 | 15 | "Marcus Thuram"       | 4       |       |
+| 2024 | 16 | "Mike Maignan"        | 6       |       |
+| 2024 | 17 | "William Saliba"      | 6       |       |
+| 2024 | 18 | "Warren Zaïre-Emery"  |         |       |
+| 2024 | 19 | "Youssouf Fofana"     | 3       |       |
+| 2024 | 20 | "Kingsley Coman"      | 1       |       |
+| 2024 | 21 | "Jonathan Clauss"     |         |       |
+| 2024 | 22 | "Théo Hernandez"      | 6       |       |
+| 2024 | 23 | "Alphonse Areola"     |         |       |
+| 2024 | 24 | "Ibrahima Konaté"     |         |       |
+| 2024 | 25 | "Bradley Barcola"     | 3       |       |
+| 2020 | 1  | "Hugo Lloris"         | 4       |       |
+| 2020 | 2  | "Benjamin Pavard"     | 3       |       |
+| 2020 | 3  | "Presnel Kimpembe"    | 4       |       |
+| 2020 | 4  | "Raphaël Varane"      | 4       |       |
+| 2020 | 5  | "Clément Lenglet"     | 1       |       |
+| 2020 | 6  | "Paul Pogba"          | 4       | 1     |
+| 2020 | 7  | "Antoine Griezmann"   | 4       | 1     |
+| 2020 | 8  | "Thomas Lemar"        | 1       |       |
+| 2020 | 9  | "Olivier Giroud"      | 2       |       |
+| 2020 | 10 | "Kylian Mbappé"       | 4       |       |
+| 2020 | 11 | "Ousmane Dembélé"     | 2       |       |
+| 2020 | 12 | "Corentin Tolisso"    | 3       |       |
+| 2020 | 13 | "N'Golo Kanté"        | 4       |       |
+| 2020 | 14 | "Adrien Rabiot"       | 4       |       |
+| 2020 | 15 | "Kurt Zouma"          |         |       |
+| 2020 | 16 | "Steve Mandanda"      |         |       |
+| 2020 | 17 | "Moussa Sissoko"      | 2       |       |
+| 2020 | 18 | "Lucas Digne"         | 2       |       |
+| 2020 | 19 | "Karim Benzema"       | 4       | 4     |
+| 2020 | 20 | "Kingsley Coman"      | 2       |       |
+| 2020 | 21 | "Lucas Hernandez"     | 2       |       |
+| 2020 | 22 | "Wissam Ben Yedder"   |         |       |
+| 2020 | 23 | "Mike Maignan"        |         |       |
+| 2020 | 24 | "Léo Dubois"          |         |       |
+| 2020 | 25 | "Jules Koundé"        | 1       |       |
+| 2020 | 26 | "Marcus Thuram"       | 1       |       |
+| 2016 | 1  | "Hugo Lloris"         | 7       |       |
+| 2016 | 2  | "Christophe Jallet"   |         |       |
+| 2016 | 3  | "Patrice Evra"        | 7       |       |
+| 2016 | 4  | "Adil Rami"           | 4       |       |
+| 2016 | 5  | "N'Golo Kanté"        | 4       |       |
+| 2016 | 6  | "Yohan Cabaye"        | 2       |       |
+| 2016 | 7  | "Antoine Griezmann"   | 7       | 6     |
+| 2016 | 8  | "Dimitri Payet"       | 7       | 3     |
+| 2016 | 9  | "Olivier Giroud"      | 6       | 3     |
+| 2016 | 10 | "André-Pierre Gignac" | 6       |       |
+| 2016 | 11 | "Anthony Martial"     | 3       |       |
+| 2016 | 12 | "Morgan Schneiderlin" |         |       |
+| 2016 | 13 | "Eliaquim Mangala"    | 1       |       |
+| 2016 | 14 | "Blaise Matuidi"      | 7       |       |
+| 2016 | 15 | "Paul Pogba"          | 7       | 1     |
+| 2016 | 16 | "Steve Mandanda"      |         |       |
+| 2016 | 17 | "Lucas Digne"         |         |       |
+| 2016 | 18 | "Moussa Sissoko"      | 6       |       |
+| 2016 | 19 | "Bacary Sagna"        | 7       |       |
+| 2016 | 20 | "Kingsley Coman"      | 6       |       |
+| 2016 | 21 | "Laurent Koscielny"   | 7       |       |
+| 2016 | 22 | "Samuel Umtiti"       | 3       |       |
+| 2016 | 23 | "Benoit Costil"       |         |       |
+| 2012 | 1  | "Hugo Lloris"         | 4       |       |
+| 2012 | 2  | "Mathieu Debuchy"     | 4       |       |
+| 2012 | 3  | "Patrice Evra"        | 1       |       |
+| 2012 | 4  | "Adil Rami"           | 4       |       |
+| 2012 | 5  | "Philippe Mexès"      | 3       |       |
+| 2012 | 6  | "Yohan Cabaye"        | 3       | 1     |
+| 2012 | 7  | "Franck Ribéry"       | 4       |       |
+| 2012 | 8  | "Mathieu Valbuena"    |         |       |
+| 2012 | 9  | "Olivier Giroud"      | 3       |       |
+| 2012 | 10 | "Karim Benzema"       | 4       |       |
+| 2012 | 11 | "Samir Nasri"         | 4       | 1     |
+| 2012 | 12 | "Blaise Matuidi"      |         |       |
+| 2012 | 13 | "Anthony Réveillère"  | 1       |       |
+| 2012 | 14 | "Jérémy Ménez"        | 3       | 1     |
+| 2012 | 15 | "Florent Malouda"     | 3       |       |
+| 2012 | 16 | "Steve Mandanda"      |         |       |
+| 2012 | 17 | "Yann M'Vila"         | 3       |       |
+| 2012 | 18 | "Alou Diarra"         | 3       |       |
+| 2012 | 19 | "Marvin Martin"       | 2       |       |
+| 2012 | 20 | "Hatem Ben Arfa"      | 2       |       |
+| 2012 | 21 | "Laurent Koscielny"   | 1       |       |
+| 2012 | 22 | "Gaël Clichy"         | 3       |       |
+| 2012 | 23 | "Cédric Carrasso"     |         |       |
+| 2008 | 1  | "Steve Mandanda"      |         |       |
+| 2008 | 7  | "Florent Malouda"     | 2       |       |
+| 2008 | 9  | "Karim Benzema"       | 2       |       |
+| 2008 | 11 | "Samir Nasri"         | 2       |       |
+| 2008 | 13 | "Patrice Evra"        | 2       |       |
+| 2008 | 22 | "Franck Ribéry"       | 3       |       |
+-------------------------------------------------------
+
+
+
+Résultat de la requête dept.sparql donnée dans l'archive
+------
+| .1 |
+======
+| 23 |
+------
+
+
+
+Résultat attendu pour d1.sparql
+---------------------------------------------------------------------------------------------------------------
+| x2                           | x3               | x4   | x5                        | x6                     |
+===============================================================================================================
+| "Auvergne-Rhône-Alpes"       | "Lyon"           | :01  | "Ain"                     | "Bourg-en-Bresse"      |
+| "Auvergne-Rhône-Alpes"       | "Lyon"           | :03  | "Allier"                  | "Moulins"              |
+| "Auvergne-Rhône-Alpes"       | "Lyon"           | :07  | "Ardèche"                 | "Privas"               |
+| "Auvergne-Rhône-Alpes"       | "Lyon"           | :15  | "Cantal"                  | "Aurillac"             |
+| "Auvergne-Rhône-Alpes"       | "Lyon"           | :26  | "Drôme"                   | "Valence"              |
+| "Auvergne-Rhône-Alpes"       | "Lyon"           | :38  | "Isère"                   | "Grenoble"             |
+| "Auvergne-Rhône-Alpes"       | "Lyon"           | :42  | "Loire"                   | "Saint-Étienne"        |
+| "Auvergne-Rhône-Alpes"       | "Lyon"           | :43  | "Haute-Loire"             | "Le Puy-en-Velay"      |
+| "Auvergne-Rhône-Alpes"       | "Lyon"           | :63  | "Puy-de-Dôme"             | "Clermont-Ferrand"     |
+| "Auvergne-Rhône-Alpes"       | "Lyon"           | :69  | "Rhône"                   | "Lyon"                 |
+| "Auvergne-Rhône-Alpes"       | "Lyon"           | :73  | "Savoie"                  | "Chambéry"             |
+| "Auvergne-Rhône-Alpes"       | "Lyon"           | :74  | "Haute-Savoie"            | "Annecy"               |
+| "Bourgogne-Franche-Comté"    | "Dijon"          | :21  | "Côte-d'Or"               | "Dijon"                |
+| "Bourgogne-Franche-Comté"    | "Dijon"          | :25  | "Doubs"                   | "Besançon"             |
+| "Bourgogne-Franche-Comté"    | "Dijon"          | :39  | "Jura"                    | "Lons-le-Saunier"      |
+| "Bourgogne-Franche-Comté"    | "Dijon"          | :58  | "Nièvre"                  | "Nevers"               |
+| "Bourgogne-Franche-Comté"    | "Dijon"          | :70  | "Haute-Saône"             | "Vesoul"               |
+| "Bourgogne-Franche-Comté"    | "Dijon"          | :71  | "Saône-et-Loire"          | "Mâcon"                |
+| "Bourgogne-Franche-Comté"    | "Dijon"          | :89  | "Yonne"                   | "Auxerre"              |
+| "Bourgogne-Franche-Comté"    | "Dijon"          | :90  | "Territoire de Belfort"   | "Belfort"              |
+| "Bretagne"                   | "Rennes"         | :22  | "Côtes-d'Armor"           | "Saint-Brieuc"         |
+| "Bretagne"                   | "Rennes"         | :29  | "Finistère"               | "Quimper"              |
+| "Bretagne"                   | "Rennes"         | :35  | "Ille-et-Vilaine"         | "Rennes"               |
+| "Bretagne"                   | "Rennes"         | :56  | "Morbihan"                | "Vannes"               |
+| "Centre-Val de Loire"        | "Orléans"        | :18  | "Cher"                    | "Bourges"              |
+| "Centre-Val de Loire"        | "Orléans"        | :28  | "Eure-et-Loir"            | "Chartres"             |
+| "Centre-Val de Loire"        | "Orléans"        | :36  | "Indre"                   | "Châteauroux"          |
+| "Centre-Val de Loire"        | "Orléans"        | :37  | "Indre-et-Loire"          | "Tours"                |
+| "Centre-Val de Loire"        | "Orléans"        | :41  | "Loir-et-Cher"            | "Blois"                |
+| "Centre-Val de Loire"        | "Orléans"        | :45  | "Loiret"                  | "Orléans"              |
+| "Corse"                      | "Ajaccio"        | :2A  | "Corse-du-Sud"            | "Ajaccio"              |
+| "Corse"                      | "Ajaccio"        | :2B  | "Haute-Corse"             | "Bastia"               |
+| "Grand Est"                  | "Strasbourg"     | :08  | "Ardennes"                | "Charleville-Mézières" |
+| "Grand Est"                  | "Strasbourg"     | :10  | "Aube"                    | "Troyes"               |
+| "Grand Est"                  | "Strasbourg"     | :51  | "Marne"                   | "Châlons-en-Champagne" |
+| "Grand Est"                  | "Strasbourg"     | :52  | "Haute-Marne"             | "Chaumont"             |
+| "Grand Est"                  | "Strasbourg"     | :54  | "Meurthe-et-Moselle"      | "Nancy"                |
+| "Grand Est"                  | "Strasbourg"     | :55  | "Meuse"                   | "Bar-le-Duc"           |
+| "Grand Est"                  | "Strasbourg"     | :57  | "Moselle"                 | "Metz"                 |
+| "Grand Est"                  | "Strasbourg"     | :67  | "Bas-Rhin"                | "Strasbourg"           |
+| "Grand Est"                  | "Strasbourg"     | :68  | "Haut-Rhin"               | "Colmar"               |
+| "Grand Est"                  | "Strasbourg"     | :88  | "Vosges"                  | "Épinal"               |
+| "Guadeloupe"                 | "Basse-Terre"    | :971 | "Guadeloupe"              | "Basse-Terre"          |
+| "Guyane"                     | "Cayenne"        | :973 | "Guyane"                  | "Cayenne"              |
+| "Hauts-de-France"            | "Lille"          | :02  | "Aisne"                   | "Laon"                 |
+| "Hauts-de-France"            | "Lille"          | :59  | "Nord"                    | "Lille"                |
+| "Hauts-de-France"            | "Lille"          | :60  | "Oise"                    | "Beauvais"             |
+| "Hauts-de-France"            | "Lille"          | :62  | "Pas-de-Calais"           | "Arras"                |
+| "Hauts-de-France"            | "Lille"          | :80  | "Somme"                   | "Amiens"               |
+| "Ile-de-France"              | "Paris"          | :75  | "Paris"                   | "Paris"                |
+| "Ile-de-France"              | "Paris"          | :77  | "Seine-et-Marne"          | "Melun"                |
+| "Ile-de-France"              | "Paris"          | :78  | "Yvelines"                | "Versailles"           |
+| "Ile-de-France"              | "Paris"          | :91  | "Essonne"                 | "Évry-Courcouronnes"   |
+| "Ile-de-France"              | "Paris"          | :92  | "Hauts-de-Seine"          | "Nanterre"             |
+| "Ile-de-France"              | "Paris"          | :93  | "Seine-Saint-Denis"       | "Bobigny"              |
+| "Ile-de-France"              | "Paris"          | :94  | "Val-de-Marne"            | "Créteil"              |
+| "Ile-de-France"              | "Paris"          | :95  | "Val-d'Oise"              | "Cergy-Pontoise"       |
+| "La Réunion"                 | "Saint-Denis"    | :974 | "La Réunion"              | "Saint-Denis"          |
+| "Martinique"                 | "Fort-de-France" | :972 | "Martinique"              | "Fort-de-France"       |
+| "Mayotte"                    | "Mamoudzou"      | :976 | "Mayotte"                 | "Mamoudzou"            |
+| "Normandie"                  | "Rouen"          | :14  | "Calvados"                | "Caen"                 |
+| "Normandie"                  | "Rouen"          | :27  | "Eure"                    | "Évreux"               |
+| "Normandie"                  | "Rouen"          | :50  | "Manche"                  | "Saint-Lô"             |
+| "Normandie"                  | "Rouen"          | :61  | "Orne"                    | "Alençon"              |
+| "Normandie"                  | "Rouen"          | :76  | "Seine-Maritime"          | "Rouen"                |
+| "Nouvelle-Aquitaine"         | "Bordeaux"       | :16  | "Charente"                | "Angoulême"            |
+| "Nouvelle-Aquitaine"         | "Bordeaux"       | :17  | "Charente-Maritime"       | "La Rochelle"          |
+| "Nouvelle-Aquitaine"         | "Bordeaux"       | :19  | "Corrèze"                 | "Tulle"                |
+| "Nouvelle-Aquitaine"         | "Bordeaux"       | :23  | "Creuse"                  | "Guéret"               |
+| "Nouvelle-Aquitaine"         | "Bordeaux"       | :24  | "Dordogne"                | "Périgueux"            |
+| "Nouvelle-Aquitaine"         | "Bordeaux"       | :33  | "Gironde"                 | "Bordeaux"             |
+| "Nouvelle-Aquitaine"         | "Bordeaux"       | :40  | "Landes"                  | "Mont-de-Marsan"       |
+| "Nouvelle-Aquitaine"         | "Bordeaux"       | :47  | "Lot-et-Garonne"          | "Agen"                 |
+| "Nouvelle-Aquitaine"         | "Bordeaux"       | :64  | "Pyrénées-Atlantiques"    | "Pau"                  |
+| "Nouvelle-Aquitaine"         | "Bordeaux"       | :79  | "Deux-Sèvres"             | "Niort"                |
+| "Nouvelle-Aquitaine"         | "Bordeaux"       | :86  | "Vienne"                  | "Poitiers"             |
+| "Nouvelle-Aquitaine"         | "Bordeaux"       | :87  | "Haute-Vienne"            | "Limoges"              |
+| "Occitanie"                  | "Toulouse"       | :09  | "Ariège"                  | "Foix"                 |
+| "Occitanie"                  | "Toulouse"       | :11  | "Aude"                    | "Carcassonne"          |
+| "Occitanie"                  | "Toulouse"       | :12  | "Aveyron"                 | "Rodez"                |
+| "Occitanie"                  | "Toulouse"       | :30  | "Gard"                    | "Nîmes"                |
+| "Occitanie"                  | "Toulouse"       | :31  | "Haute-Garonne"           | "Toulouse"             |
+| "Occitanie"                  | "Toulouse"       | :32  | "Gers"                    | "Auch"                 |
+| "Occitanie"                  | "Toulouse"       | :34  | "Hérault"                 | "Montpellier"          |
+| "Occitanie"                  | "Toulouse"       | :46  | "Lot"                     | "Cahors"               |
+| "Occitanie"                  | "Toulouse"       | :48  | "Lozère"                  | "Mende"                |
+| "Occitanie"                  | "Toulouse"       | :65  | "Hautes-Pyrénées"         | "Tarbes"               |
+| "Occitanie"                  | "Toulouse"       | :66  | "Pyrénées-Orientales"     | "Perpignan"            |
+| "Occitanie"                  | "Toulouse"       | :81  | "Tarn"                    | "Albi"                 |
+| "Occitanie"                  | "Toulouse"       | :82  | "Tarn-et-Garonne"         | "Montauban"            |
+| "Pays de la Loire"           | "Nantes"         | :44  | "Loire-Atlantique"        | "Nantes"               |
+| "Pays de la Loire"           | "Nantes"         | :49  | "Maine-et-Loire"          | "Angers"               |
+| "Pays de la Loire"           | "Nantes"         | :53  | "Mayenne"                 | "Laval"                |
+| "Pays de la Loire"           | "Nantes"         | :72  | "Sarthe"                  | "Le Mans"              |
+| "Pays de la Loire"           | "Nantes"         | :85  | "Vendée"                  | "La Roche-sur-Yon"     |
+| "Provence-Alpes-Côte d'Azur" | "Marseille"      | :04  | "Alpes-de-Haute-Provence" | "Digne-les-Bains"      |
+| "Provence-Alpes-Côte d'Azur" | "Marseille"      | :05  | "Hautes-Alpes"            | "Gap"                  |
+| "Provence-Alpes-Côte d'Azur" | "Marseille"      | :06  | "Alpes-Maritimes"         | "Nice"                 |
+| "Provence-Alpes-Côte d'Azur" | "Marseille"      | :13  | "Bouches-du-Rhône"        | "Marseille"            |
+| "Provence-Alpes-Côte d'Azur" | "Marseille"      | :83  | "Var"                     | "Toulon"               |
+| "Provence-Alpes-Côte d'Azur" | "Marseille"      | :84  | "Vaucluse"                | "Avignon"              |
+---------------------------------------------------------------------------------------------------------------
+
+
+
+Résultat attendu pour d2.sparql
+--------------------------------------------------------------------------------------------
+| x4   | x5                        | x6                     | x2                           |
+============================================================================================
+| :01  | "Ain"                     | "Bourg-en-Bresse"      | "Auvergne-Rhône-Alpes"       |
+| :02  | "Aisne"                   | "Laon"                 | "Hauts-de-France"            |
+| :03  | "Allier"                  | "Moulins"              | "Auvergne-Rhône-Alpes"       |
+| :04  | "Alpes-de-Haute-Provence" | "Digne-les-Bains"      | "Provence-Alpes-Côte d'Azur" |
+| :05  | "Hautes-Alpes"            | "Gap"                  | "Provence-Alpes-Côte d'Azur" |
+| :06  | "Alpes-Maritimes"         | "Nice"                 | "Provence-Alpes-Côte d'Azur" |
+| :07  | "Ardèche"                 | "Privas"               | "Auvergne-Rhône-Alpes"       |
+| :08  | "Ardennes"                | "Charleville-Mézières" | "Grand Est"                  |
+| :09  | "Ariège"                  | "Foix"                 | "Occitanie"                  |
+| :10  | "Aube"                    | "Troyes"               | "Grand Est"                  |
+| :11  | "Aude"                    | "Carcassonne"          | "Occitanie"                  |
+| :12  | "Aveyron"                 | "Rodez"                | "Occitanie"                  |
+| :13  | "Bouches-du-Rhône"        | "Marseille"            | "Provence-Alpes-Côte d'Azur" |
+| :14  | "Calvados"                | "Caen"                 | "Normandie"                  |
+| :15  | "Cantal"                  | "Aurillac"             | "Auvergne-Rhône-Alpes"       |
+| :16  | "Charente"                | "Angoulême"            | "Nouvelle-Aquitaine"         |
+| :17  | "Charente-Maritime"       | "La Rochelle"          | "Nouvelle-Aquitaine"         |
+| :18  | "Cher"                    | "Bourges"              | "Centre-Val de Loire"        |
+| :19  | "Corrèze"                 | "Tulle"                | "Nouvelle-Aquitaine"         |
+| :21  | "Côte-d'Or"               | "Dijon"                | "Bourgogne-Franche-Comté"    |
+| :22  | "Côtes-d'Armor"           | "Saint-Brieuc"         | "Bretagne"                   |
+| :23  | "Creuse"                  | "Guéret"               | "Nouvelle-Aquitaine"         |
+| :24  | "Dordogne"                | "Périgueux"            | "Nouvelle-Aquitaine"         |
+| :25  | "Doubs"                   | "Besançon"             | "Bourgogne-Franche-Comté"    |
+| :26  | "Drôme"                   | "Valence"              | "Auvergne-Rhône-Alpes"       |
+| :27  | "Eure"                    | "Évreux"               | "Normandie"                  |
+| :28  | "Eure-et-Loir"            | "Chartres"             | "Centre-Val de Loire"        |
+| :29  | "Finistère"               | "Quimper"              | "Bretagne"                   |
+| :2A  | "Corse-du-Sud"            | "Ajaccio"              | "Corse"                      |
+| :2B  | "Haute-Corse"             | "Bastia"               | "Corse"                      |
+| :30  | "Gard"                    | "Nîmes"                | "Occitanie"                  |
+| :31  | "Haute-Garonne"           | "Toulouse"             | "Occitanie"                  |
+| :32  | "Gers"                    | "Auch"                 | "Occitanie"                  |
+| :33  | "Gironde"                 | "Bordeaux"             | "Nouvelle-Aquitaine"         |
+| :34  | "Hérault"                 | "Montpellier"          | "Occitanie"                  |
+| :35  | "Ille-et-Vilaine"         | "Rennes"               | "Bretagne"                   |
+| :36  | "Indre"                   | "Châteauroux"          | "Centre-Val de Loire"        |
+| :37  | "Indre-et-Loire"          | "Tours"                | "Centre-Val de Loire"        |
+| :38  | "Isère"                   | "Grenoble"             | "Auvergne-Rhône-Alpes"       |
+| :39  | "Jura"                    | "Lons-le-Saunier"      | "Bourgogne-Franche-Comté"    |
+| :40  | "Landes"                  | "Mont-de-Marsan"       | "Nouvelle-Aquitaine"         |
+| :41  | "Loir-et-Cher"            | "Blois"                | "Centre-Val de Loire"        |
+| :42  | "Loire"                   | "Saint-Étienne"        | "Auvergne-Rhône-Alpes"       |
+| :43  | "Haute-Loire"             | "Le Puy-en-Velay"      | "Auvergne-Rhône-Alpes"       |
+| :44  | "Loire-Atlantique"        | "Nantes"               | "Pays de la Loire"           |
+| :45  | "Loiret"                  | "Orléans"              | "Centre-Val de Loire"        |
+| :46  | "Lot"                     | "Cahors"               | "Occitanie"                  |
+| :47  | "Lot-et-Garonne"          | "Agen"                 | "Nouvelle-Aquitaine"         |
+| :48  | "Lozère"                  | "Mende"                | "Occitanie"                  |
+| :49  | "Maine-et-Loire"          | "Angers"               | "Pays de la Loire"           |
+| :50  | "Manche"                  | "Saint-Lô"             | "Normandie"                  |
+| :51  | "Marne"                   | "Châlons-en-Champagne" | "Grand Est"                  |
+| :52  | "Haute-Marne"             | "Chaumont"             | "Grand Est"                  |
+| :53  | "Mayenne"                 | "Laval"                | "Pays de la Loire"           |
+| :54  | "Meurthe-et-Moselle"      | "Nancy"                | "Grand Est"                  |
+| :55  | "Meuse"                   | "Bar-le-Duc"           | "Grand Est"                  |
+| :56  | "Morbihan"                | "Vannes"               | "Bretagne"                   |
+| :57  | "Moselle"                 | "Metz"                 | "Grand Est"                  |
+| :58  | "Nièvre"                  | "Nevers"               | "Bourgogne-Franche-Comté"    |
+| :59  | "Nord"                    | "Lille"                | "Hauts-de-France"            |
+| :60  | "Oise"                    | "Beauvais"             | "Hauts-de-France"            |
+| :61  | "Orne"                    | "Alençon"              | "Normandie"                  |
+| :62  | "Pas-de-Calais"           | "Arras"                | "Hauts-de-France"            |
+| :63  | "Puy-de-Dôme"             | "Clermont-Ferrand"     | "Auvergne-Rhône-Alpes"       |
+| :64  | "Pyrénées-Atlantiques"    | "Pau"                  | "Nouvelle-Aquitaine"         |
+| :65  | "Hautes-Pyrénées"         | "Tarbes"               | "Occitanie"                  |
+| :66  | "Pyrénées-Orientales"     | "Perpignan"            | "Occitanie"                  |
+| :67  | "Bas-Rhin"                | "Strasbourg"           | "Grand Est"                  |
+| :68  | "Haut-Rhin"               | "Colmar"               | "Grand Est"                  |
+| :69  | "Rhône"                   | "Lyon"                 | "Auvergne-Rhône-Alpes"       |
+| :70  | "Haute-Saône"             | "Vesoul"               | "Bourgogne-Franche-Comté"    |
+| :71  | "Saône-et-Loire"          | "Mâcon"                | "Bourgogne-Franche-Comté"    |
+| :72  | "Sarthe"                  | "Le Mans"              | "Pays de la Loire"           |
+| :73  | "Savoie"                  | "Chambéry"             | "Auvergne-Rhône-Alpes"       |
+| :74  | "Haute-Savoie"            | "Annecy"               | "Auvergne-Rhône-Alpes"       |
+| :75  | "Paris"                   | "Paris"                | "Ile-de-France"              |
+| :76  | "Seine-Maritime"          | "Rouen"                | "Normandie"                  |
+| :77  | "Seine-et-Marne"          | "Melun"                | "Ile-de-France"              |
+| :78  | "Yvelines"                | "Versailles"           | "Ile-de-France"              |
+| :79  | "Deux-Sèvres"             | "Niort"                | "Nouvelle-Aquitaine"         |
+| :80  | "Somme"                   | "Amiens"               | "Hauts-de-France"            |
+| :81  | "Tarn"                    | "Albi"                 | "Occitanie"                  |
+| :82  | "Tarn-et-Garonne"         | "Montauban"            | "Occitanie"                  |
+| :83  | "Var"                     | "Toulon"               | "Provence-Alpes-Côte d'Azur" |
+| :84  | "Vaucluse"                | "Avignon"              | "Provence-Alpes-Côte d'Azur" |
+| :85  | "Vendée"                  | "La Roche-sur-Yon"     | "Pays de la Loire"           |
+| :86  | "Vienne"                  | "Poitiers"             | "Nouvelle-Aquitaine"         |
+| :87  | "Haute-Vienne"            | "Limoges"              | "Nouvelle-Aquitaine"         |
+| :88  | "Vosges"                  | "Épinal"               | "Grand Est"                  |
+| :89  | "Yonne"                   | "Auxerre"              | "Bourgogne-Franche-Comté"    |
+| :90  | "Territoire de Belfort"   | "Belfort"              | "Bourgogne-Franche-Comté"    |
+| :91  | "Essonne"                 | "Évry-Courcouronnes"   | "Ile-de-France"              |
+| :92  | "Hauts-de-Seine"          | "Nanterre"             | "Ile-de-France"              |
+| :93  | "Seine-Saint-Denis"       | "Bobigny"              | "Ile-de-France"              |
+| :94  | "Val-de-Marne"            | "Créteil"              | "Ile-de-France"              |
+| :95  | "Val-d'Oise"              | "Cergy-Pontoise"       | "Ile-de-France"              |
+| :971 | "Guadeloupe"              | "Basse-Terre"          | "Guadeloupe"                 |
+| :972 | "Martinique"              | "Fort-de-France"       | "Martinique"                 |
+| :973 | "Guyane"                  | "Cayenne"              | "Guyane"                     |
+| :974 | "La Réunion"              | "Saint-Denis"          | "La Réunion"                 |
+| :976 | "Mayotte"                 | "Mamoudzou"            | "Mayotte"                    |
+--------------------------------------------------------------------------------------------
+
+
+
+Résultat attendu pour d3.sparql
+PREFIX : <https://www.example.org/departements#>
+
+:PAC    :aVoisin  :ARA , :OCC .
+
+:PDL    :aVoisin  :NAQ , :BRE , :CVL , :NOR .
+
+:OCC    :aVoisin  :PAC , :ARA , :NAQ .
+
+:NAQ    :aVoisin  :ARA , :CVL , :PDL , :OCC .
+
+:GES    :aVoisin  :HDF , :IDF , :BFC .
+
+:ARA    :aVoisin  :PAC , :NAQ , :OCC , :BFC , :CVL .
+
+:BFC    :aVoisin  :IDF , :ARA , :GES , :CVL .
+
+:HDF    :aVoisin  :GES , :IDF , :NOR .
+
+:BRE    :aVoisin  :PDL , :NOR .
+
+:IDF    :aVoisin  :HDF , :BFC , :GES , :CVL , :NOR .
+
+:NOR    :aVoisin  :PDL , :HDF , :BRE , :IDF , :CVL .
+
+:CVL    :aVoisin  :NAQ , :IDF , :PDL , :ARA , :BFC , :NOR .
+
+
+
+Résultat attendu pour d4.sparql
+PREFIX : <https://www.example.org/departements#>
+
+:ARA    :aVoisin  :HDF , :IDF , :GES , :BFC , :ARA , :PAC , :OCC , :NAQ , :BRE , :PDL , :NOR , :CVL .
+
+:BRE    :aVoisin  :BRE , :NAQ , :PAC , :OCC , :ARA , :BFC , :HDF , :GES , :IDF , :CVL , :PDL , :NOR .
+
+:PAC    :aVoisin  :BFC , :HDF , :GES , :IDF , :NAQ , :BRE , :PDL , :NOR , :CVL , :ARA , :PAC , :OCC .
+
+:OCC    :aVoisin  :BRE , :ARA , :BFC , :HDF , :GES , :IDF , :CVL , :NOR , :PDL , :NAQ , :OCC , :PAC .
+
+:BFC    :aVoisin  :HDF , :IDF , :GES , :BFC , :ARA , :PAC , :OCC , :NAQ , :BRE , :PDL , :NOR , :CVL .
+
+:HDF    :aVoisin  :BRE , :NAQ , :PAC , :OCC , :ARA , :BFC , :HDF , :GES , :IDF , :CVL , :PDL , :NOR .
+
+:GES    :aVoisin  :BRE , :HDF , :GES , :BFC , :ARA , :PAC , :OCC , :NAQ , :CVL , :PDL , :NOR , :IDF .
+
+:NAQ    :aVoisin  :BFC , :HDF , :GES , :IDF , :NAQ , :BRE , :PDL , :NOR , :CVL , :ARA , :PAC , :OCC .
+
+:IDF    :aVoisin  :BRE , :NAQ , :PAC , :OCC , :ARA , :BFC , :HDF , :GES , :IDF , :CVL , :PDL , :NOR .
+
+:CVL    :aVoisin  :BRE , :NAQ , :PAC , :OCC , :ARA , :BFC , :HDF , :GES , :IDF , :CVL , :PDL , :NOR .
+
+:PDL    :aVoisin  :BRE , :NAQ , :PAC , :OCC , :ARA , :BFC , :HDF , :GES , :IDF , :CVL , :PDL , :NOR .
+
+:NOR    :aVoisin  :BRE , :NAQ , :PAC , :OCC , :ARA , :BFC , :HDF , :GES , :IDF , :CVL , :NOR , :PDL .

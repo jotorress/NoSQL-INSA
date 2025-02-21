@@ -1,0 +1,10 @@
+PREFIX : <https://www.example.org/foot#>
+
+SELECT ?euro ?numero ?matches ?goals
+WHERE
+{
+  ?id_player :name "Antoine Griezmann".
+  ?id_participation :player ?id_player; :euro ?euro; :n ?numero. 
+  OPTIONAL {?id_participation :matches ?matches}
+  OPTIONAL {?id_participation :goals ?goals}.
+}

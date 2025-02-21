@@ -119,7 +119,7 @@ cou
 ```
 
 ##### 5. Le nom du fils du dernier ´elément ’c’ dans l’arbre.
-El resultado sigue siendo `e` porque estamos buscando un valor en especifico que en este caso es un name, por lo cual la identacion o espacios vacios no afectan el comando.
+El resultado sigue siendo `e` porque estamos buscando un valor en especifico que en este caso es un `name`, por lo cual la identacion o espacios vacios no afectan el comando.
 
 ---
 

@@ -1,0 +1,5 @@
+PREFIX : <https://www.example.org/departements#>
+SELECT COUNT(*) WHERE
+{
+  ?x1 :aVoisin ?x2.
+}

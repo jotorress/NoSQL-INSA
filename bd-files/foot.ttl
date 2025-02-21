@@ -1,0 +1,179 @@
+@prefix : <https://www.example.org/foot#> .
+
+:BS1 :name "Brice Samba".
+:BP :name "Benjamin Pavard".
+:FM1 :name "Ferland Mendy".
+:DU :name "Dayot Upamecano".
+:JK :name "Jules Koundé".
+:EC :name "Eduardo Camavinga".
+:AG1 :name "Antoine Griezmann".
+:AT :name "Aurélien Tchouaméni".
+:OG :name "Olivier Giroud".
+:KM :name "Kylian Mbappé".
+:OD :name "Ousmane Dembélé".
+:RK :name "Randal Kolo Muani".
+:NK :name "N'Golo Kanté".
+:AR1 :name "Adrien Rabiot".
+:MT :name "Marcus Thuram".
+:MM1 :name "Mike Maignan".
+:WS :name "William Saliba".
+:WZ :name "Warren Zaïre-Emery".
+:YF :name "Youssouf Fofana".
+:KC :name "Kingsley Coman".
+:JC :name "Jonathan Clauss".
+:TH :name "Théo Hernandez".
+:AA :name "Alphonse Areola".
+:IK :name "Ibrahima Konaté".
+:BB :name "Bradley Barcola".
+:HL :name "Hugo Lloris".
+:PK :name "Presnel Kimpembe".
+:RV :name "Raphaël Varane".
+:CL :name "Clément Lenglet".
+:PP :name "Paul Pogba".
+:TL :name "Thomas Lemar".
+:CT :name "Corentin Tolisso".
+:KZ :name "Kurt Zouma".
+:SM :name "Steve Mandanda".
+:MS1 :name "Moussa Sissoko".
+:LD1 :name "Lucas Digne".
+:KB :name "Karim Benzema".
+:LH :name "Lucas Hernandez".
+:WB :name "Wissam Ben Yedder".
+:LD2 :name "Léo Dubois".
+:BC :name "Benoit Costil".
+:CJ :name "Christophe Jallet".
+:PE :name "Patrice Evra".
+:AR2 :name "Adil Rami".
+:AM :name "Anthony Martial".
+:LK :name "Laurent Koscielny".
+:BS2 :name "Bacary Sagna".
+:EM :name "Eliaquim Mangala".
+:SU :name "Samuel Umtiti".
+:MS2 :name "Morgan Schneiderlin".
+:YC :name "Yohan Cabaye".
+:BM :name "Blaise Matuidi".
+:DP :name "Dimitri Payet".
+:AG2 :name "André-Pierre Gignac".
+:CC :name "Cédric Carrasso".
+:MD :name "Mathieu Debuchy".
+:PM :name "Philippe Mexès".
+:AR3 :name "Anthony Réveillère".
+:GC :name "Gaël Clichy".
+:MV :name "Mathieu Valbuena".
+:SN :name "Samir Nasri".
+:FM2 :name "Florent Malouda".
+:YM :name "Yann M'Vila".
+:AD :name "Alou Diarra".
+:MM2 :name "Marvin Martin".
+:FR :name "Franck Ribéry". 
+:JM :name "Jérémy Ménez".
+:HB :name "Hatem Ben Arfa".
+
+:BS12024 :player :BS1; :euro 2024; :n 1.
+:BP2024 :player :BP; :euro 2024; :n 2.
+:FM12024 :player :FM1; :euro 2024; :n 3.
+:DU2024 :player :DU; :euro 2024; :n 4; :matches 6.
+:JK2024 :player :JK; :euro 2024; :n 5; :matches 6.
+:EC2024 :player :EC; :euro 2024; :n 6; :matches 4.
+:AG12024 :player :AG1; :euro 2024; :n 7; :matches 6.
+:AT2024 :player :AT; :euro 2024; :n 8; :matches 5.
+:OG2024 :player :OG; :euro 2024; :n 9; :matches 4.
+:KM2024 :player :KM; :euro 2024; :n 10; :matches 5; :goals 1.
+:OD2024 :player :OD; :euro 2024; :n 11; :matches 5.
+:RK2024 :player :RK; :euro 2024; :n 12; :matches 5; :goals 1.
+:NK2024 :player :NK; :euro 2024; :n 13; :matches 6.
+:AR12024 :player :AR1; :euro 2024; :n 14; :matches 5.
+:MT2024 :player :MT; :euro 2024; :n 15; :matches 4.
+:MM12024 :player :MM1; :euro 2024; :n 16; :matches 6.
+:WS2024 :player :WS; :euro 2024; :n 17; :matches 6.
+:WZ2024 :player :WZ; :euro 2024; :n 18.
+:YF2024 :player :YF; :euro 2024; :n 19; :matches 3.
+:KC2024 :player :KC; :euro 2024; :n 20; :matches 1.
+:JC2024 :player :JC; :euro 2024; :n 21.
+:TH2024 :player :TH; :euro 2024; :n 22; :matches 6.
+:AA2024 :player :AA; :euro 2024; :n 23.
+:IK2024 :player :IK; :euro 2024; :n 24.
+:BB2024 :player :BB; :euro 2024; :n 25; :matches 3.
+
+:HL2020 :player :HL; :euro 2020; :n 1; :matches 4.
+:BP2020 :player :BP; :euro 2020; :n 2; :matches 3.
+:PK2020 :player :PK; :euro 2020; :n 3; :matches 4.
+:RV2020 :player :RV; :euro 2020; :n 4; :matches 4.
+:CL2020 :player :CL; :euro 2020; :n 5; :matches 1.
+:PP2020 :player :PP; :euro 2020; :n 6; :matches 4; :goals 1.
+:AG12020 :player :AG1; :euro 2020; :n 7; :matches 4; :goals 1.
+:TL2020 :player :TL; :euro 2020; :n 8; :matches 1.
+:OG2020 :player :OG; :euro 2020; :n 9; :matches 2.
+:KM2020 :player :KM; :euro 2020; :n 10; :matches 4.
+:OD2020 :player :OD; :euro 2020; :n 11; :matches 2.
+:CT2020 :player :CT; :euro 2020; :n 12; :matches 3.
+:NK2020 :player :NK; :euro 2020; :n 13; :matches 4.
+:AR12020 :player :AR1; :euro 2020; :n 14; :matches 4.
+:KZ2020 :player :KZ; :euro 2020; :n 15.
+:SM2020 :player :SM; :euro 2020; :n 16.
+:MS12020 :player :MS1; :euro 2020; :n 17; :matches 2.
+:LD12020 :player :LD1; :euro 2020; :n 18; :matches 2.
+:KB2020 :player :KB; :euro 2020; :n 19; :matches 4; :goals 4.
+:KC2020 :player :KC; :euro 2020; :n 20; :matches 2.
+:LH2020 :player :LH; :euro 2020; :n 21; :matches 2.
+:WB2020 :player :WB; :euro 2020; :n 22.
+:MM12020 :player :MM1; :euro 2020; :n 23.
+:LD22020 :player :LD2; :euro 2020; :n 24.
+:JK2020 :player :JK; :euro 2020; :n 25; :matches 1.
+:MT2020 :player :MT; :euro 2020; :n 26; :matches 1.
+
+:HL2016 :player :HL; :euro 2016; :n 1; :matches 7.
+:CJ2016 :player :CJ; :euro 2016; :n 2.
+:PE2016 :player :PE; :euro 2016; :n 3; :matches 7.
+:AR22016 :player :AR2; :euro 2016; :n 4; :matches 4.
+:NK2016 :player :NK; :euro 2016; :n 5; :matches 4.
+:YC2016 :player :YC; :euro 2016; :n 6; :matches 2.
+:AG12016 :player :AG1; :euro 2016; :n 7; :matches 7; :goals 6.
+:DP2016 :player :DP; :euro 2016; :n 8; :matches 7; :goals 3.
+:OG2016 :player :OG; :euro 2016; :n 9; :matches 6; :goals 3.
+:AG22016 :player :AG2; :euro 2016; :n 10; :matches 6.
+:AM2016 :player :AM; :euro 2016; :n 11; :matches 3.
+:MS22016 :player :MS2; :euro 2016; :n 12.
+:EM2016 :player :EM; :euro 2016; :n 13; :matches 1.
+:BM2016 :player :BM; :euro 2016; :n 14; :matches 7.
+:PP2016 :player :PP; :euro 2016; :n 15; :matches 7; :goals 1.
+:SM2016 :player :SM; :euro 2016; :n 16.
+:LD12016 :player :LD1; :euro 2016; :n 17.
+:MS12016 :player :MS1; :euro 2016; :n 18; :matches 6.
+:BS22016 :player :BS2; :euro 2016; :n 19; :matches 7.
+:KC2016 :player :KC; :euro 2016; :n 20; :matches 6.
+:LK2016 :player :LK; :euro 2016; :n 21; :matches 7.
+:SU2016 :player :SU; :euro 2016; :n 22; :matches 3.
+:BC2016 :player :BC; :euro 2016; :n 23.
+
+:HL2012 :player :HL; :euro 2012; :n 1; :matches 4.
+:MD2012 :player :MD; :euro 2012; :n 2; :matches 4.
+:PE2012 :player :PE; :euro 2012; :n 3; :matches 1.
+:AR22012 :player :AR2; :euro 2012; :n 4; :matches 4.
+:PM2012 :player :PM; :euro 2012; :n 5; :matches 3.
+:YC2012 :player :YC; :euro 2012; :n 6; :matches 3; :goals 1.
+:FR2012 :player :FR; :euro 2012; :n 7; :matches 4.
+:MV2012 :player :MV; :euro 2012; :n 8.
+:OG2012 :player :OG; :euro 2012; :n 9; :matches 3.
+:KB2012 :player :KB; :euro 2012; :n 10; :matches 4.
+:SN2012 :player :SN; :euro 2012; :n 11; :matches 4; :goals 1.
+:BM2012 :player :BM; :euro 2012; :n 12.
+:AR32012 :player :AR3; :euro 2012; :n 13; :matches 1.
+:JM2012 :player :JM; :euro 2012; :n 14; :matches 3; :goals 1.
+:FM22012 :player :FM2; :euro 2012; :n 15; :matches 3.
+:SM2012 :player :SM; :euro 2012; :n 16.
+:YM2012 :player :YM; :euro 2012; :n 17; :matches 3.
+:AD2012 :player :AD; :euro 2012; :n 18; :matches 3.
+:MM22012 :player :MM2; :euro 2012; :n 19; :matches 2.
+:HB2012 :player :HB; :euro 2012; :n 20; :matches 2.
+:LK2012 :player :LK; :euro 2012; :n 21; :matches 1.
+:GC2012 :player :GC; :euro 2012; :n 22; :matches 3.
+:CC2012 :player :CC; :euro 2012; :n 23.
+
+:SM2008 :player :SM; :euro 2008; :n 1.
+:PM22008 :player :FM2; :euro 2008; :n 7; :matches 2.
+:KB2008 :player :KB; :euro 2008; :n 9; :matches 2.
+:SN2008 :player :SN; :euro 2008; :n 11; :matches 2.
+:PE2008 :player :PE; :euro 2008; :n 13; :matches 2.
+:FR2008 :player :FR; :euro 2008; :n 22; :matches 3.
+

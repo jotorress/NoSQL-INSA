@@ -1,0 +1,388 @@
+@prefix : <https://www.example.org/departements#> .
+
+:ARA 
+  :nom "Auvergne-Rhône-Alpes";
+  :chefLieu "Lyon";
+  :contientDept :01, :03, :07, :15, :26, :38, :42, :43, :63, :69, :73, :74;
+  :aVoisin :BFC, :CVL, :NAQ, :OCC, :PAC.
+  
+:BFC :nom "Bourgogne-Franche-Comté";
+  :chefLieu "Dijon";
+  :contientDept :21, :25, :39, :58, :70, :71, :89, :90;
+  :aVoisin :CVL, :GES, :IDF.
+
+:BRE :nom "Bretagne";
+  :chefLieu "Rennes";
+  :contientDept :22, :29, :35, :56;
+  :aVoisin :NOR, :PDL.
+
+:CVL :nom "Centre-Val de Loire";
+  :chefLieu "Orléans";
+  :contientDept :18, :28, :36, :37, :41, :45;
+  :aVoisin :IDF, :NOR, :PDL, :NAQ.
+
+:COR :nom "Corse";
+  :chefLieu "Ajaccio";
+  :contientDept :2A, :2B.
+
+:GES :nom "Grand Est";
+  :chefLieu "Strasbourg";
+  :contientDept :08, :10, :51, :52, :54, :55, :57, :67, :68, :88;
+  :aVoisin :HDF, :IDF.
+
+:GUA :nom "Guadeloupe";
+  :chefLieu "Basse-Terre";
+  :contientDept :971.
+
+:GUY :nom "Guyane";
+  :chefLieu "Cayenne";
+  :contientDept :973.
+
+:HDF :nom "Hauts-de-France";
+  :chefLieu "Lille";
+  :contientDept :02, :59, :60, :62, :80;
+  :aVoisin :IDF, :NOR.
+
+:IDF :nom "Ile-de-France";
+  :chefLieu "Paris";
+  :contientDept :75, :77, :78, :91, :92, :93, :94, :95;
+  :aVoisin :NOR.
+
+:LR :nom "La Réunion";
+  :chefLieu "Saint-Denis";
+  :contientDept :974.
+
+:MAR :nom "Martinique";
+  :chefLieu "Fort-de-France";
+  :contientDept :972.
+
+:MAY :nom "Mayotte";
+  :chefLieu "Mamoudzou";
+  :contientDept :976.
+
+:NOR :nom "Normandie";
+  :chefLieu "Rouen";
+  :contientDept :14, :27, :50, :61, :76;
+  :aVoisin :PDL.
+
+:NAQ :nom "Nouvelle-Aquitaine";
+  :chefLieu "Bordeaux";
+  :contientDept :16, :17, :19, :23, :24, :33, :40, :47, :64, :79, :86, :87;
+  :aVoisin :OCC, :PDL.
+
+:OCC :nom "Occitanie";
+  :chefLieu "Toulouse";
+  :contientDept :09, :11, :12, :30, :31, :32, :34, :46, :48, :65, :66, :81, :82;
+  :aVoisin :PAC.
+
+:PDL :nom "Pays de la Loire";
+  :chefLieu "Nantes";
+  :contientDept :44, :49, :53, :72, :85.
+
+:PAC :nom "Provence-Alpes-Côte d'Azur";
+  :chefLieu "Marseille";
+  :contientDept :04, :05, :06, :13, :83, :84.
+
+:01 
+  :nom "Ain";
+  :préfecture "Bourg-en-Bresse".
+:02
+  :nom "Aisne";
+  :préfecture "Laon".
+:03
+  :nom "Allier";
+  :préfecture "Moulins".
+:04
+  :nom "Alpes-de-Haute-Provence";
+  :préfecture "Digne-les-Bains".
+:05
+  :nom "Hautes-Alpes";
+  :préfecture "Gap".
+:06
+  :nom "Alpes-Maritimes";
+  :préfecture "Nice".
+:07
+  :nom "Ardèche";
+  :préfecture "Privas".
+:08
+  :nom "Ardennes";
+  :préfecture "Charleville-Mézières".
+:09
+  :nom "Ariège";
+  :préfecture "Foix".
+:10
+  :nom "Aube";
+  :préfecture "Troyes".
+:11
+  :nom "Aude";
+  :préfecture "Carcassonne".
+:12
+  :nom "Aveyron";
+  :préfecture "Rodez".
+:13
+  :nom "Bouches-du-Rhône";
+  :préfecture "Marseille".
+:14
+  :nom "Calvados";
+  :préfecture "Caen".
+:15
+  :nom "Cantal";
+  :préfecture "Aurillac".
+:16
+  :nom "Charente";
+  :préfecture "Angoulême".
+:17
+  :nom "Charente-Maritime";
+  :préfecture "La Rochelle".
+:18
+  :nom "Cher";
+  :préfecture "Bourges".
+:19
+  :nom "Corrèze";
+  :préfecture "Tulle".
+:2B
+  :nom "Haute-Corse";
+  :préfecture "Bastia".
+:2A
+  :nom "Corse-du-Sud";
+  :préfecture "Ajaccio".
+:21
+  :nom "Côte-d'Or";
+  :préfecture "Dijon".
+:22
+  :nom "Côtes-d'Armor";
+  :préfecture "Saint-Brieuc".
+:23
+  :nom "Creuse";
+  :préfecture "Guéret".
+:24
+  :nom "Dordogne";
+  :préfecture "Périgueux".
+:25
+  :nom "Doubs";
+  :préfecture "Besançon".
+:26
+  :nom "Drôme";
+  :préfecture "Valence".
+:27
+  :nom "Eure";
+  :préfecture "Évreux".
+:28
+  :nom "Eure-et-Loir";
+  :préfecture "Chartres".
+:29
+  :nom "Finistère";
+  :préfecture "Quimper".
+:30
+  :nom "Gard";
+  :préfecture "Nîmes".
+:31
+  :nom "Haute-Garonne";
+  :préfecture "Toulouse".
+:32
+  :nom "Gers";
+  :préfecture "Auch".
+:33
+  :nom "Gironde";
+  :préfecture "Bordeaux".
+:34
+  :nom "Hérault";
+  :préfecture "Montpellier".
+:35
+  :nom "Ille-et-Vilaine";
+  :préfecture "Rennes".
+:36
+  :nom "Indre";
+  :préfecture "Châteauroux".
+:37
+  :nom "Indre-et-Loire";
+  :préfecture "Tours".
+:38
+  :nom "Isère";
+  :préfecture "Grenoble".
+:39
+  :nom "Jura";
+  :préfecture "Lons-le-Saunier".
+:40
+  :nom "Landes";
+  :préfecture "Mont-de-Marsan".
+:41
+  :nom "Loir-et-Cher";
+  :préfecture "Blois".
+:42
+  :nom "Loire";
+  :préfecture "Saint-Étienne".
+:43
+  :nom "Haute-Loire";
+  :préfecture "Le Puy-en-Velay".
+:44
+  :nom "Loire-Atlantique";
+  :préfecture "Nantes".
+:45
+  :nom "Loiret";
+  :préfecture "Orléans".
+:46
+  :nom "Lot";
+  :préfecture "Cahors".
+:47
+  :nom "Lot-et-Garonne";
+  :préfecture "Agen".
+:48
+  :nom "Lozère";
+  :préfecture "Mende".
+:49
+  :nom "Maine-et-Loire";
+  :préfecture "Angers".
+:50
+  :nom "Manche";
+  :préfecture "Saint-Lô".
+:51
+  :nom "Marne";
+  :préfecture "Châlons-en-Champagne".
+:52
+  :nom "Haute-Marne";
+  :préfecture "Chaumont".
+:53
+  :nom "Mayenne";
+  :préfecture "Laval".
+:54
+  :nom "Meurthe-et-Moselle";
+  :préfecture "Nancy".
+:55
+  :nom "Meuse";
+  :préfecture "Bar-le-Duc".
+:56
+  :nom "Morbihan";
+  :préfecture "Vannes".
+:57
+  :nom "Moselle";
+  :préfecture "Metz".
+:58
+  :nom "Nièvre";
+  :préfecture "Nevers".
+:59
+  :nom "Nord";
+  :préfecture "Lille".
+:60
+  :nom "Oise";
+  :préfecture "Beauvais".
+:61
+  :nom "Orne";
+  :préfecture "Alençon".
+:62
+  :nom "Pas-de-Calais";
+  :préfecture "Arras".
+:63
+  :nom "Puy-de-Dôme";
+  :préfecture "Clermont-Ferrand".
+:64
+  :nom "Pyrénées-Atlantiques";
+  :préfecture "Pau".
+:65
+  :nom "Hautes-Pyrénées";
+  :préfecture "Tarbes".
+:66
+  :nom "Pyrénées-Orientales";
+  :préfecture "Perpignan".
+:67
+  :nom "Bas-Rhin";
+  :préfecture "Strasbourg".
+:68
+  :nom "Haut-Rhin";
+  :préfecture "Colmar".
+:69
+  :nom "Rhône";
+  :préfecture "Lyon".
+:70
+  :nom "Haute-Saône";
+  :préfecture "Vesoul".
+:71
+  :nom "Saône-et-Loire";
+  :préfecture "Mâcon".
+:72
+  :nom "Sarthe";
+  :préfecture "Le Mans".
+:73
+  :nom "Savoie";
+  :préfecture "Chambéry".
+:74
+  :nom "Haute-Savoie";
+  :préfecture "Annecy".
+:75
+  :nom "Paris";
+  :préfecture "Paris".
+:76
+  :nom "Seine-Maritime";
+  :préfecture "Rouen".
+:77
+  :nom "Seine-et-Marne";
+  :préfecture "Melun".
+:78
+  :nom "Yvelines";
+  :préfecture "Versailles".
+:79
+  :nom "Deux-Sèvres";
+  :préfecture "Niort".
+:80
+  :nom "Somme";
+  :préfecture "Amiens".
+:81
+  :nom "Tarn";
+  :préfecture "Albi".
+:82
+  :nom "Tarn-et-Garonne";
+  :préfecture "Montauban".
+:83
+  :nom "Var";
+  :préfecture "Toulon".
+:84
+  :nom "Vaucluse";
+  :préfecture "Avignon".
+:85
+  :nom "Vendée";
+  :préfecture "La Roche-sur-Yon".
+:86
+  :nom "Vienne";
+  :préfecture "Poitiers".
+:87
+  :nom "Haute-Vienne";
+  :préfecture "Limoges".
+:88
+  :nom "Vosges";
+  :préfecture "Épinal".
+:89
+  :nom "Yonne";
+  :préfecture "Auxerre".
+:90
+  :nom "Territoire de Belfort";
+  :préfecture "Belfort".
+:91
+  :nom "Essonne";
+  :préfecture "Évry-Courcouronnes".
+:92
+  :nom "Hauts-de-Seine";
+  :préfecture "Nanterre".
+:93
+  :nom "Seine-Saint-Denis";
+  :préfecture "Bobigny".
+:94
+  :nom "Val-de-Marne";
+  :préfecture "Créteil".
+:95
+  :nom "Val-d'Oise";
+  :préfecture "Cergy-Pontoise".
+:971
+  :nom "Guadeloupe";
+  :préfecture "Basse-Terre".
+:972
+  :nom "Martinique";
+  :préfecture "Fort-de-France".
+:973
+  :nom "Guyane";
+  :préfecture "Cayenne".
+:974
+  :nom "La Réunion";
+  :préfecture "Saint-Denis".
+:976
+  :nom "Mayotte";
+  :préfecture "Mamoudzou".
