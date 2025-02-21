@@ -135,31 +135,71 @@ Para poder ver los titulos de las recetas, este es el comando a seguir con la et
 xmllint --xpath "//recette/titre" recettes1.xml
 
 ```
-Por lo cual este será el resultado :
 
-```
-<titre>Batavia aux croutons</titre>
-<titre>Tarte Fine à l'italienne</titre>
-<titre>Sablés bretons à la fleur d'oranger</titre>
-<titre>Clafoutis aux cerises</titre>
-```
 
 ##### 2. Les noms des ingrédients.
+Siguiendo la estructura del `recettes1.dtd` se tiene en cuenta que para poder mostrar el nombre de los ingredientes es por medio de la etiqueta `ingredient` :
+
+```bash
+
+xmllint --xpath "//ingredient/nom_ing" recettes1.xml
+
+```
 
 ##### 3. L’élément titre de la deuxième recette.
+Por medio de `[]` se puede indicar cual registro se necesita :
+```bash
+
+xmllint --xpath "//recette[2]/titre" recettes1.xml
+
+```
 
 ##### 4. La dernière étape de chaque recette.
+Con `[last()]` es posible ver la ultima etapa :
+```bash
+
+xmllint --xpath "//texte/etape[last()]" recettes1.xml
+
+```
 
 ##### 5. Le nombre de recettes.
+Con el `count` se realiza el conteo de recetas :
+```bash
 
+xmllint --xpath "count(//recette)" recettes1.xml
+
+```
 ##### 6. Les éléments recette qui ont strictement moins de 7 ingrédients.
+Se realiza la comparacion por medio del `count` y la condicion `< 7` para obtener el resultado :
+```bash
+
+xmllint --xpath "//recette[count(/ingredients/ingredient) < 7]" recettes1.xml
+
+```
 
 ##### 7. Les titres des recettes qui ont strictement moins de 7 ingrédients.
+Para mostrar el titulo, se hace agregando dentro del comando el `titre`:
+
+```bash
+
+xmllint --xpath "//recette[count(/ingredients/ingredient) < 7]/titre" recettes1.xml
+
+```
 
 ##### 8. Les recettes qui utilisent de la farine.
+Por medio del `nom_ing` se hace la igualdad a 'farine' :
+```bash
+
+xmllint --xpath "//recette[ingredients/ingredient/nom_ing = 'farine']" recettes1.xml
+
+```
 
 ##### 9. Les recettes de la catégorie entrée.
+```bash
 
+xmllint --xpath "//recette[categorie = 'Entrée']" recettes1.xml
+
+```
 
 #### Recettes 2
 ##### 1. Les éléments titres des recettes.
