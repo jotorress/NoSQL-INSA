@@ -195,7 +195,6 @@ xmllint --xpath "//recette[ingredients/ingredient/nom_ing = 'farine']" recettes1
 ```
 
 ##### 9. Les recettes de la catégorie entrée.
-Se hace la igualdad a categorias para encontrar la caategoria que sea `Entrée` :
 ```bash
 
 xmllint --xpath "//recette[categorie = 'Entrée']" recettes1.xml
@@ -204,19 +203,72 @@ xmllint --xpath "//recette[categorie = 'Entrée']" recettes1.xml
 
 #### Recettes 2
 ##### 1. Les éléments titres des recettes.
+```bash
+
+xmllint --xpath "//recette/titre" recettes2.xml
+
+```
 
 ##### 2. Les noms des ingrédients.
+Se extrae el atributo `nom` de los ingredientes por medio de la declaración `@nom`:
+```bash
+
+xmllint --xpath "//ingredient/@nom" recettes2.xml
+
+```
 
 ##### 3. L’élément titre de la deuxième recette.
+Por medio del indice se encuentra el segundo titulo :
+```bash
 
+xmllint --xpath "//recette[2]/titre" recettes2.xml
+
+```
 ##### 4. La dernière étape de chaque recette.
+Se selecciona la ultima etapa de cada texto :
+```bash
+
+xmllint --xpath "//texte/etape[last()]" recettes2.xml
+
+```
 
 ##### 5. Le nombre de recettes.
+Se cuenta el numero total de nodos de `recette`:
+```bash
+
+xmllint --xpath "count(//recette)" recettes2.xml
+
+```
 
 ##### 6. Les éléments recette qui ont strictement moins de 7 ingrédients.
+Se filtra las recetas donde la cantidad de `ing-recette` sea estrictamente menor a 7 :
+```bash
+
+xmllint --xpath "//recette[count(/ingredients/ing-recette) < 7]" recettes2.xml
+
+```
 
 ##### 7. Les titres des recettes qui ont strictement moins de 7 ingrédients.
+Se aplica el mismo filtro que en el punto anterior, pero se extrae solo los `titre`.
+```bash
 
+xmllint --xpath "//recette[count(/ingredients/ing-recette) < 7]/titre" recettes2.xml
+
+```
 ##### 8. Les recettes qui utilisent de la farine.
+Se busca en las recetas donde al menos un `ing-recette` tenga el atributo `ingredient` con el valor `farine` :
+```bash
+
+xmllint --xpath "//recette[ingredients/ing-recette/@ingredient = 'farine']" recettes2.xml
+
+```
 
 ##### 9. Les recettes de la catégorie entrée.
+Al tener un IDREFS, significa que puede contener uno o más valores de id de `categorie`. Por lo cual se hace la busqueda de recetas donde `@categ` contenga `entree` :
+```bash
+
+xmllint --xpath "//recette[contains(@categ, 'entree')]" recettes2.xml
+
+```
+
+
