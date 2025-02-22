@@ -4,107 +4,112 @@ Ce répertoire contient les fichiers et solutions pour le TD des Bases de Donné
 
 **Fait par : CHICA Miller et TORRES Jonathan**
 
-
 ## Structure du répertoire
 
-- **Exercice 1** : `abc.xml`
-
+- **Exercice 1.1** : `abc.xml`
+- **Exercice 1.2** : `recettes1.xml`, `recettes1.dtd`, `recettes2.xml`, `recettes2.dtd`
+ 
 ## Exercices
 
 ### Exercice 1.1 : Premiers pas
 
-#### 1. //e/preceding::text()
-Se usa `//e` para ir al nodo de `e` dentro del archivo, despues por medio del `preceding` se busca todos los valores anteriores dentro del nodo de `c` y el nodo `b`, encontrando el texto `bli`, de esta manera si hay texto antes de dicho nodo, sera mostrado.
+#### 1. `//e/preceding::text()`
+Cette requête utilise `//e` pour localiser le nœud `<e>` dans le fichier. Ensuite, `preceding::text()` permet de récupérer tous les nœuds de texte précédant cet élément, y compris ceux présents dans les nœuds `<c>` et `<b>`. Cela inclut le texte `bli` s'il est présent avant `<e>`.
 
-El comando usado es el siguiente :
+Commande :
 
 ```bash
 xmllint --xpath "//e/preceding::text()" abc.xml
 ```
 
-El resultado es `bli`.
+**Résultat :** `bli`
 
-#### 2. count(//c|//b/node())
-Esta consulta cuenta todos los elementos de `c` y los nodos hijos de `b` donde se incluyen los elementos y textos, por lo cual si ya fue contado el nodo `c`, ya no sera contado dentro de los hijos de `b`.
+#### 2. `count(//c|//b/node())`
+Cette requête compte tous les éléments `<c>` ainsi que tous les nœuds enfants de `<b>`, y compris les éléments et les nœuds de texte. Si un nœud `<c>` est déjà compté, il ne sera pas re-compté dans les enfants de `<b>`.
 
-El comando usado es el siguiente :
+Commande :
 
 ```bash
-xmllint --xpath "/count(//c|//b/node())" abc.xml
+xmllint --xpath "count(//c|//b/node())" abc.xml
 ```
 
-EL resultado es `4`.
+**Résultat :** `4`
 
-#### 3. La somme de tous les attributs.
+#### 3. La somme de tous les attributs
+
+Commande :
 
 ```bash
 xmllint --xpath "sum(//@*)" abc.xml
 ```
-El resultado es `10`.
 
-#### 4. Le contenu textuel du document, où chaque ’b’ est remplacé par un ’c’.
-Por medio del comando string es posible leer la concantenacion de los strings The string value of an element or document node is the concatenation of
-the character data in all text nodes below.
+**Résultat :** `10`
+
+#### 4. Le contenu textuel du document, où chaque `b` est remplacé par un `c`
+La fonction `string(/)` extrait la valeur textuelle du document en concaténant tous les nœuds de texte. La fonction `translate()` remplace chaque occurrence de `b` par `c`.
+
+Commande :
 
 ```bash
 xmllint --xpath "translate(string(/),'b','c')" abc.xml
 ```
-El resultado es `cliclacou`.
 
-#### 5. Le nom du fils du dernier ´elément ’c’ dans l’arbre.
+**Résultat :** `cliclacou`
 
-```bash
-xmllint --xpath "name(//c[position()=last()]/*)" abc.xml
-```
+#### 5. Le nom du fils du dernier élément `<c>` dans l’arbre
+
+Commande :
 
 ```bash
 xmllint --xpath "name(//c[last()]/*)" abc.xml
 ```
-El resultado es `e`.
 
-#### 6. 
+**Résultat :** `e`
 
-##### 1. //e/preceding::text()
-XPath toma los espacios y saltos de lineas como nodos de texto vacios, por lo cual el resultado es el mismo pero con espacios entre el texto presentado:
+### Effet de l’indentation sur les résultats
 
-  bli
-  
-##### 2. count(//c|//b/node())
-El resultado es `8`, esto sucede por los espacios que existen dentro de la identacion siendo `textos vacios`, lo cual se puede denotar por medio del comando
+#### 1. `//e/preceding::text()`
+XPath traite les espaces et les sauts de ligne comme des nœuds de texte vides. Ainsi, le résultat est identique mais inclut des espaces supplémentaires :
+
+```
+bli
+```
+
+#### 2. `count(//c|//b/node())`
+Le résultat devient `8` en raison des nœuds de texte vides générés par l'indentation. On peut vérifier cela avec :
 
 ```bash
-xmllint --shell abc.xml 
+xmllint --shell abc.xml
 / > xpath //c|//b/node()
 ```
 
-Donde el resultado es correspondiente a:
+**Sortie :**
 ```bash
 Object is a Node Set :
 Set contains 8 nodes:
 1  TEXT
-    content= 
+    content=
 2  ELEMENT c
 3  TEXT
-    content= 
+    content=
 4  TEXT
-    content= bli 
+    content= bli
 5  ELEMENT c
 6  TEXT
-    content= 
+    content=
 7  ELEMENT c
 8  TEXT
-    content= 
-/ > 
+    content=
+/ >
 ```
-##### 3. La somme de tous les attributs.
-El resultado sigue siendo `10` ya que se asume que los elementos vacios no estan siendo sumados dentro del comando, solamente los atributos.
 
-##### 4. Le contenu textuel du document, où chaque ’b’ est remplacé par un ’c’.
-EL resultado es el esperado, solamente se imprimen los espacios por la identacion realizada, explicada en el primer punto.
-```bash
+#### 3. La somme de tous les attributs
+Le résultat reste `10`, car les nœuds de texte vides ne contiennent pas d'attributs et ne sont donc pas pris en compte.
 
+#### 4. Le contenu textuel avec remplacement de `b` par `c`
+Le résultat contient des espaces supplémentaires dus à l'indentation :
 
-
+```
 
 
 cli
@@ -118,157 +123,130 @@ cou
 
 ```
 
-##### 5. Le nom du fils du dernier ´elément ’c’ dans l’arbre.
-El resultado sigue siendo `e` porque estamos buscando un valor en especifico que en este caso es un `name`, por lo cual la identacion o espacios vacios no afectan el comando.
+#### 5. Le nom du fils du dernier élément `<c>` dans l’arbre
+Le résultat reste `e`, car l'indentation et les espaces n'affectent pas les requêtes cherchant les noms d'éléments.
 
 ---
 
 
-### Exercice 1.2 Recettes
+### Exercice 1.2 - Recettes
+
+Dans cet exercice, nous analysons deux DTD différentes permettant de décrire des recettes de cuisine. Nous utilisons XPath pour extraire des informations pertinentes de ces documents.
+
+---
 
 #### Recettes 1
-##### 1. Les éléments titres des recettes.
-Para poder ver los titulos de las recetas, este es el comando a seguir con la etiqueta `recette` para luego seguir con `titre`
 
+##### 1. Extraction des titres des recettes
+Nous extrayons les titres des recettes en naviguant à travers la structure XML :
 ```bash
-
 xmllint --xpath "//recette/titre" recettes1.xml
-
 ```
 
-
-##### 2. Les noms des ingrédients.
-Siguiendo la estructura del `recettes1.dtd` se tiene en cuenta que para poder mostrar el nombre de los ingredientes es por medio de la etiqueta `ingredient` :
-
+##### 2. Extraction des noms des ingrédients
+Les noms des ingrédients sont contenus dans l'élément `ingredient` :
 ```bash
-
 xmllint --xpath "//ingredient/nom_ing" recettes1.xml
-
 ```
 
-##### 3. L’élément titre de la deuxième recette.
-Por medio de `[]` se puede indicar cual registro se necesita :
+##### 3. Extraction du titre de la deuxième recette
+On utilise un indice pour sélectionner la deuxième recette :
 ```bash
-
 xmllint --xpath "//recette[2]/titre" recettes1.xml
-
 ```
 
-##### 4. La dernière étape de chaque recette.
-Con `[last()]` es posible ver la ultima etapa :
+##### 4. Extraction de la dernière étape de chaque recette
+On utilise la fonction `[last()]` pour sélectionner la dernière étape :
 ```bash
-
 xmllint --xpath "//texte/etape[last()]" recettes1.xml
-
 ```
 
-##### 5. Le nombre de recettes.
-Con el `count` se realiza el conteo de recetas :
+##### 5. Comptage du nombre total de recettes
+On compte le nombre de nœuds `recette` :
 ```bash
-
 xmllint --xpath "count(//recette)" recettes1.xml
-
-```
-##### 6. Les éléments recette qui ont strictement moins de 7 ingrédients.
-Se realiza la comparacion por medio del `count` y la condicion `< 7` para obtener el resultado :
-```bash
-
-xmllint --xpath "//recette[count(/ingredients/ingredient) < 7]" recettes1.xml
-
 ```
 
-##### 7. Les titres des recettes qui ont strictement moins de 7 ingrédients.
-Para mostrar el titulo, se hace agregando dentro del comando el `titre`:
-
+##### 6. Sélection des recettes avec strictement moins de 7 ingrédients
+On utilise `count()` pour filtrer les recettes ayant moins de 7 ingrédients :
 ```bash
-
-xmllint --xpath "//recette[count(/ingredients/ingredient) < 7]/titre" recettes1.xml
-
+xmllint --xpath "//recette[count(ingredients/ingredient) < 7]" recettes1.xml
 ```
 
-##### 8. Les recettes qui utilisent de la farine.
-Por medio del `nom_ing` se hace la igualdad a 'farine' :
+##### 7. Extraction des titres des recettes avec strictement moins de 7 ingrédients
+On applique le filtre précédent en extrayant uniquement les titres :
 ```bash
+xmllint --xpath "//recette[count(ingredients/ingredient) < 7]/titre" recettes1.xml
+```
 
+##### 8. Extraction des recettes contenant de la farine
+On filtre les recettes contenant l'ingrédient `farine` :
+```bash
 xmllint --xpath "//recette[ingredients/ingredient/nom_ing = 'farine']" recettes1.xml
-
 ```
 
-##### 9. Les recettes de la catégorie entrée.
+##### 9. Extraction des recettes de la catégorie "entrée"
+On sélectionne les recettes appartenant à la catégorie "Entrée" :
 ```bash
-
 xmllint --xpath "//recette[categorie = 'Entrée']" recettes1.xml
-
 ```
+
+---
 
 #### Recettes 2
-##### 1. Les éléments titres des recettes.
-```bash
 
+##### 1. Extraction des titres des recettes
+```bash
 xmllint --xpath "//recette/titre" recettes2.xml
-
 ```
 
-##### 2. Les noms des ingrédients.
-Se extrae el atributo `nom` de los ingredientes por medio de la declaración `@nom`:
+##### 2. Extraction des noms des ingrédients
+Les noms des ingrédients sont stockés en tant qu'attributs `nom` :
 ```bash
-
 xmllint --xpath "//ingredient/@nom" recettes2.xml
-
 ```
 
-##### 3. L’élément titre de la deuxième recette.
-Por medio del indice se encuentra el segundo titulo :
+##### 3. Extraction du titre de la deuxième recette
 ```bash
-
 xmllint --xpath "//recette[2]/titre" recettes2.xml
-
 ```
-##### 4. La dernière étape de chaque recette.
-Se selecciona la ultima etapa de cada texto :
-```bash
 
+##### 4. Extraction de la dernière étape de chaque recette
+```bash
 xmllint --xpath "//texte/etape[last()]" recettes2.xml
-
 ```
 
-##### 5. Le nombre de recettes.
-Se cuenta el numero total de nodos de `recette`:
+##### 5. Comptage du nombre total de recettes
 ```bash
-
 xmllint --xpath "count(//recette)" recettes2.xml
-
 ```
 
-##### 6. Les éléments recette qui ont strictement moins de 7 ingrédients.
-Se filtra las recetas donde la cantidad de `ing-recette` sea estrictamente menor a 7 :
+##### 6. Sélection des recettes avec strictement moins de 7 ingrédients
+On filtre les recettes ayant moins de 7 `ing-recette` :
 ```bash
-
-xmllint --xpath "//recette[count(/ingredients/ing-recette) < 7]" recettes2.xml
-
+xmllint --xpath "//recette[count(ingredients/ing-recette) < 7]" recettes2.xml
 ```
 
-##### 7. Les titres des recettes qui ont strictement moins de 7 ingrédients.
-Se aplica el mismo filtro que en el punto anterior, pero se extrae solo los `titre`.
+##### 7. Extraction des titres des recettes avec strictement moins de 7 ingrédients
 ```bash
-
-xmllint --xpath "//recette[count(/ingredients/ing-recette) < 7]/titre" recettes2.xml
-
+xmllint --xpath "//recette[count(ingredients/ing-recette) < 7]/titre" recettes2.xml
 ```
-##### 8. Les recettes qui utilisent de la farine.
-Se busca en las recetas donde al menos un `ing-recette` tenga el atributo `ingredient` con el valor `farine` :
-```bash
 
+##### 8. Extraction des recettes contenant de la farine
+On vérifie que l'attribut `ingredient` est égal à "farine" :
+```bash
 xmllint --xpath "//recette[ingredients/ing-recette/@ingredient = 'farine']" recettes2.xml
-
 ```
 
-##### 9. Les recettes de la catégorie entrée.
-Al tener un IDREFS, significa que puede contener uno o más valores de id de `categorie`. Por lo cual se hace la busqueda de recetas donde `@categ` contenga `entree` :
+##### 9. Extraction des recettes de la catégorie "entrée"
+La catégorie est stockée sous forme d'IDREFS, donc on vérifie qu'elle contient "entree" :
 ```bash
-
 xmllint --xpath "//recette[contains(@categ, 'entree')]" recettes2.xml
-
 ```
+
+---
+
+
+
 
 
