@@ -269,17 +269,19 @@ xmllint --xpath "//dict[key='Album']/string[preceding-sibling::key[1]='Album']" 
 ##### 3. Tous les genres de musique (Jazz, Rock, etc.) :
 Para el género de la musica se realiza la misma consulta con el valor 'Genre' :
 ```bash
-xmllint --xpath "//dict[key='Album']/string[preceding-sibling::key[1]='Genre']" iTunes-Music-Library.xml
+xmllint --xpath "//dict[key='Genre']/string[preceding-sibling::key[1]='Genre']" iTunes-Music-Library.xml
 ```
 
 ##### 4. Nombre de morceaux de Jazz :
+Esta consulta cuenta los dict que contienen un género de 'Jazz' :
 ```bash
-xmllint --xpath "" iTunes-Music-Library.xml
+xmllint --xpath "count(//dict[key='Genre' and string[preceding-sibling::key[1]='Genre']='Jazz'])" iTunes-Music-Library.xml
 ```
 
 ##### 5. Tous les genres de musique, en éliminant les doublons :
+Para eliminar los duplicados dentro de la consulta se usa `distinct-values` dentro de la lista de géneros :
 ```bash
-xmllint --xpath "" iTunes-Music-Library.xml
+xmllint --xpath "//dict[key='Genre']/string[preceding-sibling::key[1]='Genre'][not(. = preceding::dict[key='Genre']/string[preceding-sibling::key[1]='Genre'])]" iTunes-Music-Library.xml
 ```
 
 ##### 6. Titres (Name) des morceaux qui ont été écoutés au moins une fois :
