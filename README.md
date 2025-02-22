@@ -254,18 +254,22 @@ xmllint --xpath "//recette[contains(@categ, 'entree')]" recettes2.xml
 ---
 
 ##### 1. Nombre de morceaux (tracks hors PlayLists) de la bibliothèque :
+Esta consulta cuenta todos los elementos dict que tienen una key con valor 'Track ID', lo que indica una pista individual :
 ```bash
-xmllint --xpath "" iTunes-Music-Library.xml
+xmllint --xpath "count(//dict[key='Track ID'])" iTunes-Music-Library.xml
 ```
 
+
 ##### 2. Tous les noms d’albums :
+Esta consulta busca elementos string que siguen inmediatamente a una key con valor 'Album' :
 ```bash
-xmllint --xpath "" iTunes-Music-Library.xml
+xmllint --xpath "//dict[key='Album']/string[preceding-sibling::key[1]='Album']" iTunes-Music-Library.xml
 ```
 
 ##### 3. Tous les genres de musique (Jazz, Rock, etc.) :
+Para el género de la musica se realiza la misma consulta con el valor 'Genre' :
 ```bash
-xmllint --xpath "" iTunes-Music-Library.xml
+xmllint --xpath "//dict[key='Album']/string[preceding-sibling::key[1]='Genre']" iTunes-Music-Library.xml
 ```
 
 ##### 4. Nombre de morceaux de Jazz :
@@ -294,3 +298,4 @@ xmllint --xpath "" iTunes-Music-Library.xml
 ```
 
 ---
+
