@@ -8,6 +8,7 @@ Ce répertoire contient les fichiers et solutions pour le TD des Bases de Donné
 
 - **Exercice 1.1** : `abc.xml`
 - **Exercice 1.2** : `recettes1.xml`, `recettes1.dtd`, `recettes2.xml`, `recettes2.dtd`
+- **Exercice 1.3** : `iTunes-Music-Library.xml`
  
 ## Exercices
 
@@ -246,7 +247,50 @@ xmllint --xpath "//recette[contains(@categ, 'entree')]" recettes2.xml
 
 ---
 
+### Exercice 1.3 - iTunes
 
+ Analyse du fichier `iTunes-Music-Library.xml`
 
+---
 
+##### 1. Nombre de morceaux (tracks hors PlayLists) de la bibliothèque :
+```bash
+xmllint --xpath "" iTunes-Music-Library.xml
+```
 
+##### 2. Tous les noms d’albums :
+```bash
+xmllint --xpath "" iTunes-Music-Library.xml
+```
+
+##### 3. Tous les genres de musique (Jazz, Rock, etc.) :
+```bash
+xmllint --xpath "" iTunes-Music-Library.xml
+```
+
+##### 4. Nombre de morceaux de Jazz :
+```bash
+xmllint --xpath "" iTunes-Music-Library.xml
+```
+
+##### 5. Tous les genres de musique, en éliminant les doublons :
+```bash
+xmllint --xpath "" iTunes-Music-Library.xml
+```
+
+##### 6. Titres (Name) des morceaux qui ont été écoutés au moins une fois :
+```bash
+xmllint --xpath "" iTunes-Music-Library.xml
+```
+
+##### 7. Titres des morceaux qui n’ont jamais été écoutés :
+```bash
+xmllint --xpath "" iTunes-Music-Library.xml
+```
+
+##### 8. Titre(s) du (ou des) morceaux les plus anciens (basé sur le champ Year) :
+```bash
+xmllint --xpath "" iTunes-Music-Library.xml
+```
+
+---
