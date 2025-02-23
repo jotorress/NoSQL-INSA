@@ -285,18 +285,34 @@ xmllint --xpath "//dict[key='Genre']/string[preceding-sibling::key[1]='Genre'][n
 ```
 
 ##### 6. Titres (Name) des morceaux qui ont été écoutés au moins une fois :
+Ahora se busca canciones donde el `Play Count` sea mayor que 0 :
 ```bash
-xmllint --xpath "" iTunes-Music-Library.xml
+xmllint --xpath "//dict[key='Play Count' and integer[preceding-sibling::key[1]='Play Count'] > 0]/string[preceding-sibling::key[1]='Name']" iTunes-Music-Library.xml
 ```
 
 ##### 7. Titres des morceaux qui n’ont jamais été écoutés :
+Para encontrar las canciones que jamas se han escuchado, se usa el `not` respecto a la llave `Play Count` :
 ```bash
-xmllint --xpath "" iTunes-Music-Library.xml
+xmllint --xpath "//dict[not(key='Play Count')]/string[preceding-sibling::key[1]='Name']" iTunes-Music-Library.xml
 ```
 
 ##### 8. Titre(s) du (ou des) morceaux les plus anciens (basé sur le champ Year) :
+Se buscan todos los elementos dict que contienen una key con valor 'Year', despues se obtiene el nombre de la canción.
+Por medio de `../integer[preceding-sibling::key[1]='Year']` obtiene el año de la canción actual.
+Con `//dict[key='Year']/integer[preceding-sibling::key[1]='Year']` se obtiene todos los años en la biblioteca.
+La condición `not(...>...)`tiene como tarea verificar que no exista ningún año menor que el año actual.
+
 ```bash
-xmllint --xpath "" iTunes-Music-Library.xml
+xmllint --xpath "//dict[key='Year']/string[preceding-sibling::key[1]='Name']
+[not(../integer[preceding-sibling::key[1]='Year'] > 
+//dict[key='Year']/integer[preceding-sibling::key[1]='Year'])]" iTunes-Music-Library.xml
+```
+Resultado :
+```
+<string>Annie Laurie</string>
+<string>Midnight Special</string>
+<string>Lowe Groovin'</string>
+<string>The Applejack</string>
 ```
 
 ---
