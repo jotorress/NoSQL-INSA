@@ -246,74 +246,82 @@ xmllint --xpath "//recette[contains(@categ, 'entree')]" recettes2.xml
 ```
 
 ---
-
 ### Exercice 1.3 - iTunes
 
- Analyse du fichier `iTunes-Music-Library.xml`
+Analyse du fichier `iTunes-Music-Library.xml`
 
 ---
 
 ##### 1. Nombre de morceaux (tracks hors PlayLists) de la bibliothèque :
-Esta consulta cuenta todos los elementos dict que tienen una key con valor 'Track ID', lo que indica una pista individual :
+Cette requête compte tous les éléments `dict` qui ont une clé avec la valeur `Track ID`, ce qui indique une piste individuelle :
+
 ```bash
 xmllint --xpath "count(//dict[key='Track ID'])" iTunes-Music-Library.xml
 ```
 
-
 ##### 2. Tous les noms d’albums :
-Esta consulta busca elementos string que siguen inmediatamente a una key con valor 'Album' :
+Cette requête recherche les éléments `string` qui suivent immédiatement une clé avec la valeur `Album` :
+
 ```bash
 xmllint --xpath "//dict[key='Album']/string[preceding-sibling::key[1]='Album']" iTunes-Music-Library.xml
 ```
 
 ##### 3. Tous les genres de musique (Jazz, Rock, etc.) :
-Para el género de la musica se realiza la misma consulta con el valor 'Genre' :
+Pour extraire les genres musicaux, on effectue la même requête avec la valeur `Genre` :
+
 ```bash
 xmllint --xpath "//dict[key='Genre']/string[preceding-sibling::key[1]='Genre']" iTunes-Music-Library.xml
 ```
 
 ##### 4. Nombre de morceaux de Jazz :
-Esta consulta cuenta los dict que contienen un género de 'Jazz' :
+Cette requête compte les éléments `dict` qui contiennent un genre `Jazz` :
+
 ```bash
 xmllint --xpath "count(//dict[key='Genre' and string[preceding-sibling::key[1]='Genre']='Jazz'])" iTunes-Music-Library.xml
 ```
 
 ##### 5. Tous les genres de musique, en éliminant les doublons :
-Para eliminar los duplicados dentro de la consulta se usa `distinct-values` dentro de la lista de géneros :
+Pour éliminer les doublons dans la requête, on utilise `distinct-values` sur la liste des genres :
+
 ```bash
 xmllint --xpath "//dict[key='Genre']/string[preceding-sibling::key[1]='Genre'][not(. = preceding::dict[key='Genre']/string[preceding-sibling::key[1]='Genre'])]" iTunes-Music-Library.xml
 ```
 
-##### 6. Titres (Name) des morceaux qui ont été écoutés au moins une fois :
-Ahora se busca canciones donde el `Play Count` sea mayor que 0 :
+##### 6. Titres (`Name`) des morceaux qui ont été écoutés au moins une fois :
+Cette requête recherche les morceaux dont le `Play Count` est supérieur à 0 :
+
 ```bash
 xmllint --xpath "//dict[key='Play Count' and integer[preceding-sibling::key[1]='Play Count'] > 0]/string[preceding-sibling::key[1]='Name']" iTunes-Music-Library.xml
 ```
 
 ##### 7. Titres des morceaux qui n’ont jamais été écoutés :
-Para encontrar las canciones que jamas se han escuchado, se usa el `not` respecto a la llave `Play Count` :
+Pour trouver les morceaux qui n’ont jamais été joués, on utilise `not` sur la clé `Play Count` :
+
 ```bash
 xmllint --xpath "//dict[not(key='Play Count')]/string[preceding-sibling::key[1]='Name']" iTunes-Music-Library.xml
 ```
 
-##### 8. Titre(s) du (ou des) morceaux les plus anciens (basé sur le champ Year) :
-Se buscan todos los elementos dict que contienen una key con valor 'Year', despues se obtiene el nombre de la canción.
-Por medio de `../integer[preceding-sibling::key[1]='Year']` obtiene el año de la canción actual.
-Con `//dict[key='Year']/integer[preceding-sibling::key[1]='Year']` se obtiene todos los años en la biblioteca.
-La condición `not(...>...)`tiene como tarea verificar que no exista ningún año menor que el año actual.
+##### 8. Titre(s) du (ou des) morceaux les plus anciens (basé sur le champ `Year`) :
+On recherche tous les éléments `dict` qui contiennent une clé `Year`, puis on récupère le titre du morceau le plus ancien.
+- `../integer[preceding-sibling::key[1]='Year']` récupère l'année du morceau actuel.
+- `//dict[key='Year']/integer[preceding-sibling::key[1]='Year']` récupère toutes les années présentes dans la bibliothèque.
+- La condition `not(... > ...)` permet de s'assurer qu'il n'existe aucune année plus ancienne que celle actuelle.
 
 ```bash
 xmllint --xpath "//dict[key='Year']/string[preceding-sibling::key[1]='Name']
-[not(../integer[preceding-sibling::key[1]='Year'] > 
+[not(../integer[preceding-sibling::key[1]='Year'] >
 //dict[key='Year']/integer[preceding-sibling::key[1]='Year'])]" iTunes-Music-Library.xml
 ```
-Resultado :
+
+Exemple de résultat :
+
 ```
 <string>Annie Laurie</string>
 <string>Midnight Special</string>
 <string>Lowe Groovin'</string>
 <string>The Applejack</string>
 ```
+
 
 ---
 
