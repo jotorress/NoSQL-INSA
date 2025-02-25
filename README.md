@@ -325,4 +325,7 @@ Exemple de résultat :
 
 
 ---
+### Exercice 2 - SQL
+
+---
 
