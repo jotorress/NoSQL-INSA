@@ -334,7 +334,7 @@ Exemple de résultat :
 
 Dans cet exercice, nous avons utilisé **SQLite** pour analyser un graphe de relations "follower/followed" issu de Twitter.
 
-### **1. Création de la base de données et de la table**
+#### **1. Création de la base de données et de la table**
 Nous avons d'abord ouvert SQLite et créé une base de données **social_network.db** :
 
 ```bash
@@ -349,7 +349,7 @@ CREATE TABLE followers (
     follower_id INTEGER
 );
 ```
-### **2. Importation des données**
+#### **2. Importation des données**
 
 Le fichier higgs-social_network.edgelist contient la liste des relations sous forme de paires (follower_id, user_id).
 Nous avons importé ces données dans SQLite en utilisant l'espace " " comme séparateur :
@@ -359,7 +359,7 @@ Nous avons importé ces données dans SQLite en utilisant l'espace " " comme sé
 .import higgs-social_network.edgelist followers
 ```
 
-### **3. Exécution des requêtes SQL**
+#### **3. Exécution des requêtes SQL**
 
 Enfin, nous avons exécuté le script stats.sql contenant les requêtes demandées :
 
@@ -380,7 +380,7 @@ Ce script génère les statistiques suivantes :
 
 Les résultats sont affichés directement dans le terminal.
 
-### **4. Exportation des résultats**
+#### **4. Exportation des résultats**
 
 Si nécessaire, les résultats peuvent être enregistrés dans un fichier texte :
 
@@ -388,3 +388,149 @@ Si nécessaire, les résultats peuvent être enregistrés dans un fichier texte 
 sqlite3 social_network.db < stats.sql > resultats.txt
 
 ```
+
+
+---
+
+### **3.1 Joueurs de foot**
+
+---
+
+#### **0. Testez la requête `foot.sparql` et expliquez son résultat**
+
+La consulta SPARQL contenida en el archivo `foot.sparql` se ejecuta utilizando el siguiente comando:
+
+```bash
+sparql --data foot.ttl --query foot.sparql
+```
+
+##### **Explicación de la consulta**:
+La consulta busca información sobre el jugador **Antoine Griezmann** en el archivo RDF `foot.ttl`. Específicamente, selecciona las siguientes variables:
+- `?euro`: El año del campeonato de Europa en el que participó.
+- `?numero`: El número asociado al jugador (posiblemente el número de camiseta).
+- `?matches`: La cantidad de partidos jugados en ese campeonato.
+- `?goals`: La cantidad de goles marcados en ese campeonato.
+
+La consulta utiliza cláusulas `OPTIONAL` para incluir los valores de `?matches` y `?goals`, lo que permite que estos campos estén vacíos si no hay datos disponibles.
+
+##### **Resultado obtenido**:
+El resultado de la consulta es el siguiente:
+
+```
+-----------------------------------
+| euro | numero | matches | goals |
+===================================
+| 2016 | 7      | 7       | 6     |
+| 2020 | 7      | 4       | 1     |
+| 2024 | 7      | 6       |       |
+-----------------------------------
+```
+
+##### **Interpretación del resultado**:
+- **Euro 2016**:
+  - **Número**: 7 (posiblemente el número de camiseta).
+  - **Partidos jugados**: 7.
+  - **Goles marcados**: 6.
+
+- **Euro 2020**:
+  - **Número**: 7.
+  - **Partidos jugados**: 4.
+  - **Goles marcados**: 1.
+
+- **Euro 2024**:
+  - **Número**: 7.
+  - **Partidos jugados**: 6.
+  - **Goles marcados**: Vacío (no hay datos disponibles, posiblemente porque el campeonato aún no ha concluido o no se han registrado los goles).
+
+
+#### **1. Les joueurs et le nombre d’euros auxquels ils ont participé (en ordre décroissant).**
+
+```
+PREFIX : <https://www.example.org/foot#>
+
+SELECT (?name AS ?player) (COUNT(DISTINCT ?euro) AS ?count_euros)
+WHERE
+{
+  ?id_participation :player ?id_player; :euro ?euro.
+  ?id_player :name ?name.
+}
+GROUP BY ?name
+ORDER BY DESC(?count_euros)
+
+```
+
+#### **2. Les joueurs et le nombre de matches qu’ils ont jou´e s’ils en ont jou´e au moins 1 (en ordre d´ecroissant)**
+```
+PREFIX : <https://www.example.org/foot#>
+
+SELECT (?name AS ?player) (SUM(?matches) AS ?total_matches)
+WHERE {
+  ?id_participation :player ?id_player; :matches ?matches.
+  ?id_player :name ?name.
+}
+GROUP BY ?name
+HAVING (?total_matches >= 1)
+ORDER BY DESC(?total_matches)
+
+```
+
+
+#### **3. Les joueurs et le nombre de buts qu’ils ont marqué s’ils en ont marqué au moins 1 (en ordre décroissant), ainsi que le nombre de matches joués.**
+
+```sparql
+PREFIX : <https://www.example.org/foot#>
+
+SELECT (?name AS ?player) (SUM(?goals) AS ?total_goals) (SUM(?matches) AS ?total_matches)
+WHERE {
+  ?id_participation :player ?id_player; :matches ?matches.
+  OPTIONAL { ?id_participation :goals ?goals. }
+  ?id_player :name ?name.
+}
+GROUP BY ?name
+HAVING (?total_goals >= 1)
+ORDER BY DESC(?total_goals)
+```
+
+---
+
+#### **4. Les joueurs qui ont marqué dans deux euros différents.**
+
+```sparql
+PREFIX : <https://www.example.org/foot#>
+
+SELECT DISTINCT ?player ?euro1 ?goals1 ?euro2 ?goals2
+WHERE {
+  ?id_participation1 :player ?id_player; :euro ?euro1; :goals ?goals1.
+  ?id_participation2 :player ?id_player; :euro ?euro2; :goals ?goals2.
+  FILTER (?euro1 < ?euro2)
+  ?id_player :name ?player.
+}
+ORDER BY ?euro1 DESC(?player)
+```
+
+---
+
+#### **5. Le rapport complet de tous les euros, les joueurs participants avec leurs nombre de matches et de buts.**
+
+```sparql
+PREFIX : <https://www.example.org/foot#>
+
+SELECT ?euro ?n ?name ?matches ?goals
+WHERE {
+  ?id_participation :player ?id_player; :euro ?euro; :n ?n.
+  OPTIONAL { ?id_participation :matches ?matches. }
+  OPTIONAL { ?id_participation :goals ?goals. }
+  ?id_player :name ?name.
+}
+
+ORDER BY DESC(?euro) ASC(?n)
+```
+
+---
+
+### **3.2 Joueurs de foot**
+
+---
+
+#### **0. Testez la requête dept.sparql et expliquez son résultat..**
+
