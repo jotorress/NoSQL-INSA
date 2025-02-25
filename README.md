@@ -550,9 +550,131 @@ Pour exécuter cette requête SPARQL dans la terminal avec Apache Jena, utilisez
 sparql --data foot.ttl --query f5.sparql
 ```
 
+---
+
 ### **3.2 Joueurs de foot**
 
 ---
 
 #### **0. Testez la requête dept.sparql et expliquez son résultat..**
+
+##### Analyse de la requête SPARQL et des résultats
+
+La requête SPARQL a pour objectif de compter le nombre de relations de voisinage (`:aVoisin`) entre les régions françaises dans une base de données RDF.
+
+##### Requête SPARQL
+```sparql
+PREFIX : <https://www.example.org/departements#>
+SELECT COUNT(*) WHERE
+{
+  ?x1 :aVoisin ?x2.
+}
+```
+
+##### Résultat
+```
+------
+| .1 |
+======
+| 23 |
+------
+```
+
+##### Explication
+- La requête compte toutes les relations de voisinage (`:aVoisin`) dans la base de données.
+- Le résultat **23** indique qu'il y a 23 paires de régions qui sont voisines.
+
+##### Interprétation
+- Les régions françaises sont fortement interconnectées.
+- Ce résultat est utile pour des analyses géographiques ou des études de connectivité régionale.
+
+
+#### **1. Sélectionnez les régions (en ordre alphabétique) avec le chef-lieu, ainsi que pour chaque département de la région : le numéro, le nom et la préfecture.**
+
+**Requête SPARQL :**
+```sparql
+PREFIX : <https://www.example.org/departements#>
+
+SELECT ?x1 ?x2 ?x3 ?x4 ?x5 ?x6
+WHERE {
+  ?region :nom ?x1;
+          :chefLieu ?x2;
+          :contientDept ?x3.
+
+  ?x3 :nom ?x4;
+      :préfecture ?x5.
+}
+ORDER BY ?x1 ?x3
+```
+
+---
+
+#### **2. Sélectionnez les numéros de département (en ordre croissant), avec le nom de département, la préfecture et la région.**
+
+**Requête SPARQL :**
+```sparql
+PREFIX : <https://www.example.org/departements#>
+
+SELECT ?x4 ?x5 ?x6 ?x2
+WHERE {
+  ?region :nom ?x2;
+          :contientDept ?x4.
+  
+  ?x4 :nom ?x5;
+           :préfecture ?x6.
+}
+ORDER BY ?x4
+
+```
+
+#### **3. Construisez la clôture symétrique de la relation `aVoisin`.**
+
+**Requête SPARQL :**
+```sparql
+PREFIX : <https://www.example.org/departements#>
+
+CONSTRUCT {
+  ?region1 :aVoisinSym ?region2.
+  ?region2 :aVoisinSym ?region1.
+}
+WHERE {
+  ?region1 :aVoisin ?region2.
+}
+
+```
+
+#### **4. Construisez la clôture transitive de la clôture symétrique de la relation `aVoisin`.**
+
+**Requête SPARQL :**
+```sparql
+PREFIX : <https://www.example.org/departements#>
+
+CONSTRUCT {
+  ?x :aVoisin ?z.
+}
+WHERE {
+  { ?x :aVoisin ?y. ?y :aVoisin ?z. }
+  UNION
+  { ?x :aVoisin ?y. ?z :aVoisin ?y. }
+  UNION
+  { ?y :aVoisin ?x. ?y :aVoisin ?z. }
+}
+```
+
+---
+
+#### **5. Parmi les différents cas d’utilisation que vous venez de manipuler, lequel semble plus adéquat pour utiliser des bases de données orientées graphes et pourquoi ?**
+
+**Réponse :**
+Le cas d'utilisation le plus adapté pour une base de données orientée graphe est la **clôture transitive** (point 4). Les bases de données orientées graphes sont conçues pour gérer des relations complexes et des requêtes récursives, comme celles nécessaires pour calculer la clôture transitive.
+
+---
+
+#### **6. Pour quel cas d’utilisation vous privilégieriez plutôt les données relationnelles et pourquoi ?**
+
+**Réponse :**
+Les données relationnelles sont plus adaptées pour les **requêtes simples** comme la sélection des régions et départements (points 1 et 2). Ces requêtes ne nécessitent pas de relations complexes ou récursives, ce qui correspond bien au modèle relationnel.
+
+
+---
 
