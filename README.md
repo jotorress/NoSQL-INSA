@@ -478,7 +478,10 @@ HAVING (?total_matches >= 1)
 ORDER BY DESC(?total_matches)
 
 ```
-
+Pour exécuter cette requête SPARQL dans la terminal avec Apache Jena, utilisez la commande suivante:
+```bash
+sparql --data foot.ttl --query f2.sparql
+```
 
 #### **3. Les joueurs et le nombre de buts qu’ils ont marqué s’ils en ont marqué au moins 1 (en ordre décroissant), ainsi que le nombre de matches joués.**
 
@@ -498,6 +501,11 @@ ORDER BY DESC(?total_goals)
 
 ---
 
+Pour exécuter cette requête SPARQL dans la terminal avec Apache Jena, utilisez la commande suivante:
+```bash
+sparql --data foot.ttl --query f3.sparql
+```
+
 #### **4. Les joueurs qui ont marqué dans deux euros différents.**
 
 ```sparql
@@ -514,6 +522,11 @@ ORDER BY ?euro1 DESC(?player)
 ```
 
 ---
+
+Pour exécuter cette requête SPARQL dans la terminal avec Apache Jena, utilisez la commande suivante:
+```bash
+sparql --data foot.ttl --query f4.sparql
+```
 
 #### **5. Le rapport complet de tous les euros, les joueurs participants avec leurs nombre de matches et de buts.**
 
@@ -532,6 +545,10 @@ ORDER BY DESC(?euro) ASC(?n)
 ```
 
 ---
+Pour exécuter cette requête SPARQL dans la terminal avec Apache Jena, utilisez la commande suivante:
+```bash
+sparql --data foot.ttl --query f5.sparql
+```
 
 ### **3.2 Joueurs de foot**
 
