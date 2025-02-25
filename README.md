@@ -349,4 +349,42 @@ CREATE TABLE followers (
     follower_id INTEGER
 );
 ```
+### **2. Importation des données**
 
+Le fichier higgs-social_network.edgelist contient la liste des relations sous forme de paires (follower_id, user_id).
+Nous avons importé ces données dans SQLite en utilisant l'espace " " comme séparateur :
+
+```
+.separator " "
+.import higgs-social_network.edgelist followers
+```
+
+### **3. Exécution des requêtes SQL**
+
+Enfin, nous avons exécuté le script stats.sql contenant les requêtes demandées :
+
+
+```
+sqlite3 social_network.db < stats.sql
+```
+
+Ce script génère les statistiques suivantes :
+
+- **Nombre total de relations** (liens follower/followed) : `14 855 842`
+- **Nombre d’utilisateurs ayant au moins un follower** : `456 626`
+- **Nombre d’utilisateurs qui suivent au moins une personne** : `370 341`
+- **Utilisateur ayant le plus de followers** : `1 259`
+  - **Exemple d’utilisateur avec ce nombre de followers** : `13 115`
+- **Utilisateur ayant le moins de followers** : `1`
+  - **Exemple d’utilisateur avec ce nombre de followers** : `17`
+
+Les résultats sont affichés directement dans le terminal.
+
+### **4. Exportation des résultats**
+
+Si nécessaire, les résultats peuvent être enregistrés dans un fichier texte :
+
+```
+sqlite3 social_network.db < stats.sql > resultats.txt
+
+```
