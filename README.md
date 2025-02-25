@@ -341,3 +341,12 @@ Nous avons d'abord ouvert SQLite et créé une base de données **social_network
 sqlite3 social_network.db
 ```
 
+Ensuite, nous avons défini la structure de la table followers :
+
+```
+CREATE TABLE followers (
+    user_id INTEGER,
+    follower_id INTEGER
+);
+```
+
