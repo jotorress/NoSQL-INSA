@@ -1,12 +1,11 @@
 PREFIX : <https://www.example.org/foot#>
 
-SELECT ?player (SUM(?goals) AS ?total_goals) (SUM(?matches) AS ?total_matches)
+SELECT (?name AS ?player) (SUM(?goals) AS ?total_goals) (SUM(?matches) AS ?total_matches)
 WHERE {
-  ?id_player :name ?player.
-  ?id_participation :player ?id_player;
-                     :matches ?matches;
-                     :goals ?goals.
+  ?id_participation :player ?id_player; :matches ?matches.
+  OPTIONAL { ?id_participation :goals ?goals. }
+  ?id_player :name ?name.
 }
-GROUP BY ?player
-HAVING (?total_goals > 0)
+GROUP BY ?name
+HAVING (?total_goals >= 1)
 ORDER BY DESC(?total_goals)

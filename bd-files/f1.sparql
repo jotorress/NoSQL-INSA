@@ -1,10 +1,10 @@
 PREFIX : <https://www.example.org/foot#>
 
-SELECT ?joueur (COUNT(?euro) AS ?nbTournois)
-WHERE {
-  ?id_player :name ?joueur.
-  ?id_participation :player ?id_player;
-                     :euro ?euro.
+SELECT (?name AS ?player) (COUNT(DISTINCT ?euro) AS ?count_euros)
+WHERE
+{
+  ?id_participation :player ?id_player; :euro ?euro.
+  ?id_player :name ?name.
 }
-GROUP BY ?joueur
-ORDER BY DESC(?nbTournois)
+GROUP BY ?name
+ORDER BY DESC(?count_euros)

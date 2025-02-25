@@ -2,12 +2,10 @@ PREFIX : <https://www.example.org/foot#>
 
 SELECT ?euro ?n ?name ?matches ?goals
 WHERE {
-  ?id_player :name ?name.
-  ?id_participation :player ?id_player;
-                     :euro ?euro;
-                     :n ?n.
-  
+  ?id_participation :player ?id_player; :euro ?euro; :n ?n.
   OPTIONAL { ?id_participation :matches ?matches. }
   OPTIONAL { ?id_participation :goals ?goals. }
+  ?id_player :name ?name.
 }
-ORDER BY DESC(?euro) ?n
+
+ORDER BY DESC(?euro) ASC(?n)
