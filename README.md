@@ -9,6 +9,7 @@ Ce répertoire contient les fichiers et solutions pour le TD des Bases de Donné
 - **Exercice 1.1** : `abc.xml`
 - **Exercice 1.2** : `recettes1.xml`, `recettes1.dtd`, `recettes2.xml`, `recettes2.dtd`
 - **Exercice 1.3** : `iTunes-Music-Library.xml`
+- **Exercice 2** : `stats.sql`
  
 ## Exercices
 
