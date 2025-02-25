@@ -325,7 +325,19 @@ Exemple de résultat :
 
 
 ---
+
 ### Exercice 2 - SQL
 
 ---
+
+### **Interroger un graphe avec SQLite**
+
+Dans cet exercice, nous avons utilisé **SQLite** pour analyser un graphe de relations "follower/followed" issu de Twitter.
+
+### **1. Création de la base de données et de la table**
+Nous avons d'abord ouvert SQLite et créé une base de données **social_network.db** :
+
+```bash
+sqlite3 social_network.db
+```
 
