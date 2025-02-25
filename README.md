@@ -459,6 +459,11 @@ ORDER BY DESC(?count_euros)
 
 ```
 
+Pour exécuter cette requête SPARQL dans la terminal avec Apache Jena, utilisez la commande suivante:
+```bash
+sparql --data foot.ttl --query f1.sparql
+```
+
 #### **2. Les joueurs et le nombre de matches qu’ils ont jou´e s’ils en ont jou´e au moins 1 (en ordre d´ecroissant)**
 ```
 PREFIX : <https://www.example.org/foot#>
