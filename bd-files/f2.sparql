@@ -1,0 +1,11 @@
+PREFIX : <https://www.example.org/foot#>
+
+SELECT ?joueur (SUM(?matches) AS ?totalMatchs)
+WHERE {
+  ?id_player :name ?joueur.
+  ?id_participation :player ?id_player;
+                     :matches ?matches.
+}
+GROUP BY ?joueur
+HAVING (?totalMatchs > 0)
+ORDER BY DESC(?totalMatchs)

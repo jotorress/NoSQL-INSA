@@ -1,0 +1,17 @@
+PREFIX : <https://www.example.org/foot#>
+
+SELECT ?player ?euro1 ?goals1 ?euro2 ?goals2
+WHERE {
+  ?id_player :name ?player.
+
+  ?participation1 :player ?id_player;
+                  :euro ?euro1;
+                  :goals ?goals1.
+
+  ?participation2 :player ?id_player;
+                  :euro ?euro2;
+                  :goals ?goals2.
+
+  FILTER(?euro1 < ?euro2)  # Evita duplicados y ordena los torneos
+}
+ORDER BY ?euro1 DESC(?player)
