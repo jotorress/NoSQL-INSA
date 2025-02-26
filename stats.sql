@@ -17,23 +17,19 @@ SELECT user_id, COUNT(*) AS follower_count FROM followers GROUP BY user_id;
 SELECT 'nb total de relations friend/follower :', COUNT(*) FROM followers;
 
 -- Compter le nombre d'utilisateurs ayant au moins un follower
-SELECT 'nb utilisateurs qui ont au moins un follower :', COUNT(*) FROM followers_count;
+SELECT 'nb utilisateurs qui ont au moins un follower :', COUNT(*) FROM followers_count WHERE follower_count > 0;
 
 -- Compter le nombre d'utilisateurs qui suivent au moins quelqu'un
 SELECT 'nb utilisateurs qui suivent au moins qqn :', COUNT(DISTINCT follower_id) FROM followers;
 
 -- Trouver un utilisateur avec le nombre maximal de followers
-WITH max_followers AS (
-    SELECT user_id, follower_count FROM followers_count ORDER BY follower_count DESC LIMIT 1
-)
-SELECT 'nb max de followers par utilisateur :', follower_count FROM max_followers;
+SELECT 'nb max de followers par utilisateur :', MAX(follower_count) FROM followers_count;
 
-SELECT 'exemple dutilisateur avec nb max de followers :', user_id FROM max_followers;
+-- Trouver un exemple d'utilisateur avec le nombre maximal de followers
+SELECT 'exemple dutilisateur avec nb max de followers :', user_id FROM followers_count WHERE follower_count = (SELECT MAX(follower_count) FROM followers_count);
 
 -- Trouver un utilisateur avec le nombre minimal de followers
-WITH min_followers AS (
-    SELECT user_id, follower_count FROM followers_count ORDER BY follower_count ASC LIMIT 1
-)
-SELECT 'nb min de followers par utilisateur :', follower_count FROM min_followers;
+SELECT 'nb min de followers par utilisateur :', MIN(follower_count) FROM followers_count;
 
-SELECT 'exemple dutilisateur avec min de followers :', user_id FROM min_followers;
+-- Trouver un exemple d'utilisateur avec le nombre minimal de followers
+SELECT 'exemple dutilisateur avec min de followers :', user_id FROM followers_count WHERE follower_count = (SELECT MIN(follower_count) FROM followers_count);
