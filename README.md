@@ -655,7 +655,6 @@ CONSTRUCT {
 }
 WHERE {
   ?x ( :aVoisin | ^:aVoisin)+ ?y.
-  FILTER(?x != ?y)
 }
 
 ```
