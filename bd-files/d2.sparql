@@ -1,0 +1,11 @@
+PREFIX : <https://www.example.org/departements#>
+
+SELECT ?x4 ?x5 ?x6 ?x2
+WHERE {
+  ?region :nom ?x2;
+          :contientDept ?x4.
+  
+  ?x4 :nom ?x5;
+           :préfecture ?x6.
+}
+ORDER BY ?x4

@@ -1,0 +1,9 @@
+PREFIX : <https://www.example.org/departements#>
+
+CONSTRUCT {
+  ?region1 :aVoisinSym ?region2.
+  ?region2 :aVoisinSym ?region1.
+}
+WHERE {
+  ?region1 :aVoisin ?region2.
+}

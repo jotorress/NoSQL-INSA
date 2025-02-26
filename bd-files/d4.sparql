@@ -1,0 +1,20 @@
+PREFIX : <https://www.example.org/departements#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+
+CONSTRUCT {
+  ?region :aVoisin ?autreRegion .
+}
+WHERE {
+  {
+    # Clôture symétrique : si A est voisin de B, alors B est voisin de A
+    { ?region :aVoisin ?autreRegion }
+    UNION
+    { ?autreRegion :aVoisin ?region }
+  }
+  UNION
+  {
+    # Clôture transitive : si A est voisin de B et B est voisin de C, alors A est voisin de C
+    ?region :aVoisin ?intermédiaire .
+    ?intermédiaire :aVoisin ?autreRegion .
+  }
+}
