@@ -23,12 +23,15 @@ SELECT 'nb utilisateurs qui suivent au moins qqn :', COUNT(DISTINCT follower_id)
 SELECT 'nb max de followers par utilisateur :', MAX(follower_count) FROM (
     SELECT user_id, COUNT(*) AS follower_count FROM followers GROUP BY user_id
 );
-SELECT 'exemple d'utilisateur avec nb max de followers :', user_id 
+
+SELECT 'exemple dutilisateur avec nb max de followers :', user_id 
 FROM (SELECT user_id, COUNT(*) AS follower_count FROM followers GROUP BY user_id ORDER BY follower_count DESC LIMIT 1);
 
 -- Utilisateur ayant le plus petit nombre de followers
+
 SELECT 'nb min de followers par utilisateur :', MIN(follower_count) FROM (
     SELECT user_id, COUNT(*) AS follower_count FROM followers GROUP BY user_id
 );
-SELECT 'exemple d'utilisateur avec min de followers :', user_id 
+
+SELECT 'exemple dutilisateur avec min de followers :', user_id 
 FROM (SELECT user_id, COUNT(*) AS follower_count FROM followers GROUP BY user_id ORDER BY follower_count ASC LIMIT 1);
