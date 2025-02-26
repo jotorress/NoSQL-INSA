@@ -396,25 +396,25 @@ sqlite3 social_network.db < stats.sql > resultats.txt
 
 ---
 
-#### **0. Testez la requête `foot.sparql` et expliquez son résultat**
+### **0. Testez la requête `foot.sparql` et expliquez son résultat**  
 
-La consulta SPARQL contenida en el archivo `foot.sparql` se ejecuta utilizando el siguiente comando:
+La requête SPARQL contenue dans le fichier `foot.sparql` est exécutée en utilisant la commande suivante :  
 
 ```bash
 sparql --data foot.ttl --query foot.sparql
 ```
 
-##### **Explicación de la consulta**:
-La consulta busca información sobre el jugador **Antoine Griezmann** en el archivo RDF `foot.ttl`. Específicamente, selecciona las siguientes variables:
-- `?euro`: El año del campeonato de Europa en el que participó.
-- `?numero`: El número asociado al jugador (posiblemente el número de camiseta).
-- `?matches`: La cantidad de partidos jugados en ese campeonato.
-- `?goals`: La cantidad de goles marcados en ese campeonato.
+##### **Explication de la requête**  
+La requête extrait des informations sur le joueur **Antoine Griezmann** à partir du fichier RDF `foot.ttl`. Plus précisément, elle sélectionne les variables suivantes :  
+- `?euro` : L’année du championnat d’Europe auquel il a participé.  
+- `?numero` : Le numéro associé au joueur (probablement son numéro de maillot).  
+- `?matches` : Le nombre de matchs joués lors de cette édition du tournoi.  
+- `?goals` : Le nombre de buts marqués lors de ce championnat.  
 
-La consulta utiliza cláusulas `OPTIONAL` para incluir los valores de `?matches` y `?goals`, lo que permite que estos campos estén vacíos si no hay datos disponibles.
+La requête utilise des clauses `OPTIONAL` pour inclure les valeurs de `?matches` et `?goals`, ce qui permet à ces champs d’être vides si aucune donnée n’est disponible.  
 
-##### **Resultado obtenido**:
-El resultado de la consulta es el siguiente:
+##### **Résultat obtenu**  
+Le résultat de la requête est le suivant :  
 
 ```
 -----------------------------------
@@ -426,22 +426,21 @@ El resultado de la consulta es el siguiente:
 -----------------------------------
 ```
 
-##### **Interpretación del resultado**:
-- **Euro 2016**:
-  - **Número**: 7 (posiblemente el número de camiseta).
-  - **Partidos jugados**: 7.
-  - **Goles marcados**: 6.
+##### **Interprétation du résultat**  
+- **Euro 2016** :  
+  - **Numéro** : 7 (probablement son numéro de maillot).  
+  - **Matchs joués** : 7.  
+  - **Buts marqués** : 6.  
 
-- **Euro 2020**:
-  - **Número**: 7.
-  - **Partidos jugados**: 4.
-  - **Goles marcados**: 1.
+- **Euro 2020** :  
+  - **Numéro** : 7.  
+  - **Matchs joués** : 4.  
+  - **Buts marqués** : 1.  
 
-- **Euro 2024**:
-  - **Número**: 7.
-  - **Partidos jugados**: 6.
-  - **Goles marcados**: Vacío (no hay datos disponibles, posiblemente porque el campeonato aún no ha concluido o no se han registrado los goles).
-
+- **Euro 2024** :  
+  - **Numéro** : 7.  
+  - **Matchs joués** : 6.  
+  - **Buts marqués** : Champ vide (aucune donnée disponible, peut-être parce que le championnat n’est pas encore terminé ou que les buts n’ont pas été enregistrés).  
 
 #### **1. Les joueurs et le nombre d’euros auxquels ils ont participé (en ordre décroissant).**
 
