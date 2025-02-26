@@ -660,14 +660,11 @@ WHERE {
 }
 ```
 
----
 
 #### **5. Parmi les différents cas d’utilisation que vous venez de manipuler, lequel semble plus adéquat pour utiliser des bases de données orientées graphes et pourquoi ?**
 
 **Réponse :**
 Le cas d'utilisation le plus adapté pour une base de données orientée graphe est la **clôture transitive** (point 4). Les bases de données orientées graphes sont conçues pour gérer des relations complexes et des requêtes récursives, comme celles nécessaires pour calculer la clôture transitive.
-
----
 
 #### **6. Pour quel cas d’utilisation vous privilégieriez plutôt les données relationnelles et pourquoi ?**
 
