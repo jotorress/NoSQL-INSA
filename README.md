@@ -487,15 +487,17 @@ sparql --data foot.ttl --query f2.sparql
 ```sparql
 PREFIX : <https://www.example.org/foot#>
 
-SELECT (?name AS ?player) (SUM(?goals) AS ?total_goals) (SUM(?matches) AS ?total_matches)
+SELECT (?name AS ?player) (SUM(COALESCE(?goals,0)) AS ?total_goals) (SUM(COALESCE(?matches,0)) AS ?total_matches)
 WHERE {
-  ?id_participation :player ?id_player; :matches ?matches.
-  OPTIONAL { ?id_participation :goals ?goals. }
+  ?id_participation :player ?id_player.
   ?id_player :name ?name.
+  OPTIONAL{?id_participation :goals ?goals. } 
+  OPTIONAL{?id_participation :matches ?matches. }             
+
 }
 GROUP BY ?name
-HAVING (?total_goals >= 1)
-ORDER BY DESC(?total_goals)
+HAVING (?total_goals > 0)
+ORDER BY DESC(?total_goals) DESC(?total_matches)
 ```
 
 ---
@@ -649,15 +651,13 @@ WHERE {
 PREFIX : <https://www.example.org/departements#>
 
 CONSTRUCT {
-  ?x :aVoisin ?z.
+  ?x :aVoisin ?y .
 }
 WHERE {
-  { ?x :aVoisin ?y. ?y :aVoisin ?z. }
-  UNION
-  { ?x :aVoisin ?y. ?z :aVoisin ?y. }
-  UNION
-  { ?y :aVoisin ?x. ?y :aVoisin ?z. }
+  ?x ( :aVoisin | ^:aVoisin)+ ?y.
+  FILTER(?x != ?y)
 }
+
 ```
 
 
