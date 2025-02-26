@@ -1,5 +1,4 @@
 PREFIX : <https://www.example.org/departements#>
-PREFIX owl: <http://www.w3.org/2002/07/owl#>
 
 CONSTRUCT {
   ?x :aVoisin ?y .
